@@ -102,6 +102,7 @@ const HeroBanner = (props) => {
             >
               <CTAButton
                 Title={VideoHeroBanner.CTA_Button_Title}
+                toLink={'/contact'}
               />
             </Box>
           </Link>

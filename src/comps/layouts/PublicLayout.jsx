@@ -9,9 +9,10 @@ const PublicLayout = () => {
   return (
     <Box
         minH="100vh"
-        minW={'400px'}
+        minW={'100%'}
         display="flex"
         flexDirection="column"
+        overflowX="hidden"
     >
         <PublicNavbar />
         <Box 

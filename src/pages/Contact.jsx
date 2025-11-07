@@ -40,14 +40,14 @@ const Contact = () => {
           {ContactData.Title}
         </Heading>
         <Box
-          w='80%'
+          w={'80%'}
           h='10px'
           bg={'navbar_bg'}
           mt={'50px'}
           mb={'50px'}
         />
         <Box
-            w='500px'
+            w={['300px', '400px', '500px']}
             alignContent={'center'}
         >
             <DFCLogo

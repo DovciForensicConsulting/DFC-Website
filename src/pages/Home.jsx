@@ -172,7 +172,9 @@ const Home = () => {
                     mt={'50px'}
                     mb={'50px'}
                 /> 
-                <VStack>
+                <VStack
+                    w='80%'
+                >
                     <Heading
                         fontWeight={'normal'}
                         fontSize={['5xl', '6xl']}
@@ -188,7 +190,7 @@ const Home = () => {
                         return(
                             <Box
                                 id={experienceIdx}
-                                w='500px'
+                                w={['400px', '500px']}
                                 pl={'50px'}
                                 pr={'50px'}
                             >

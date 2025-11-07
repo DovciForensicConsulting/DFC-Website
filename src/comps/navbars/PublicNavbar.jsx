@@ -142,7 +142,7 @@ const MobileMenuCloseButton = (props) => {
 }
 
 const MobileNavButton = (props) => {
-    const { buttonData, id } = props;
+    const { buttonData, id, onClick } = props;
     const location = useLocation();
     const isActive = location.pathname === buttonData.Link;
   return (
@@ -162,6 +162,7 @@ const MobileNavButton = (props) => {
             borderBottom={isActive ? 'solid' : 'none'}
             borderBottomColor={'navbar_navlink_active'}
             borderBottomWidth={'thin'}
+            onClick={onClick}
             _hover={{
                 "borderBottom": "solid",
                 "borderBottomColor": "navbar_navlink_active",
@@ -239,6 +240,7 @@ const MobileMenu = () => {
                                     <MobileNavButton
                                         id={idx}
                                         buttonData={buttonData}
+                                        onClick={() => setOpen(false)}
                                     />
                                 ))}
                             </VStack>
@@ -264,7 +266,7 @@ export const PublicNavbar = () => {
         justifyContent={'space-between'}
         bg="navbar_bg"
         h='50px'
-        w='100%'
+        w='100vw'
         position={'fixed'}
         zIndex={100}
     >
