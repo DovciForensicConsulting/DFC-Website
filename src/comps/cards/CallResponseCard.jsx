@@ -35,7 +35,7 @@ const CallResponseCard = ({
       w={["80%", "60%"]}
       h="auto"
       style={{
-        "filter": 'drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.5))'
+        "filter": 'drop-shadow(10px 10px 3px rgba(0, 0, 0, 0.5))'
       }}
       initial={{opacity: 0}}
       variants={{
@@ -53,10 +53,10 @@ const CallResponseCard = ({
             <MotionHeading
                 pt={['0px', '10px']}
                 pl={['0px', '90px']}
-                initial={{y: -100}}
+                initial={{scale: 0}}
                 variants={{
                     visible: {
-                        y: 0,
+                        scale: 1,
                         transition: {duration: 0.5, ease: 'easeInOut'}
                     }
                 }}
@@ -131,7 +131,7 @@ const CallResponseCard = ({
                     transition:{delay:0.25, duration: 0.25, ease: "easeInOut"}
                 }
             }}
-            fontSize="lg"
+            fontSize="sm"
             mt={4}
             color="{colors.deep_gray}"
             fontFamily="body"
