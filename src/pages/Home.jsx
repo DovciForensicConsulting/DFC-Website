@@ -1,10 +1,13 @@
-import { AspectRatio, Box, Heading, HStack, Icon, Image, Text, VStack } from '@chakra-ui/react';
+import { AspectRatio, Box, GridItem, Heading, HStack, Icon, Image, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import HeroBanner from "../comps/banners/HeroBanner";
 import { Experience, OurDifference, WhatWeDo, WhyChooseUs } from '../data/HomeData';
 import CTAButton from '../comps/buttons/CTAButton';
 import { FiAward, FiFileText, FiShield } from 'react-icons/fi';
 import { FaCheck } from 'react-icons/fa';
 import { SiPushbullet } from 'react-icons/si';
+import CallResponseCard from '../comps/cards/CallResponseCard';
+import WhatWeDoCard from '../comps/cards/WhatWeDoCard';
+import ExperienceCard from '../comps/cards/ExperienceCard';
 
 const Home = () => {
   return (
@@ -36,26 +39,17 @@ const Home = () => {
                     {WhyChooseUs.Title}
                 </Heading>
 
-                <VStack
-                    align="start"
-                    spacing={3}
-                    color={'pub_layout_body_text'}
-                    fontFamily={'body'}
-                    fontSize={'med'}
-                >
-                    <HStack>
-                        <Icon as={FiAward} size={'lg'} />
-                        <Text>25+ Years Forensic Lab Experience</Text>
-                    </HStack>
-                        <HStack>
-                            <Icon as={FiFileText} size={'lg'} />
-                            <Text>Court-Qualified Expert Witness</Text>
-                        </HStack>
-                        <HStack>
-                            <Icon as={FiShield} size={'lg'} />
-                            <Text>Peer-Reviewed Publications</Text>
-                    </HStack>
-                </VStack>
+            <SimpleGrid columns={1} gap={6} alignContent="center" justifyItems={'center'}>
+                    {WhyChooseUs.Reasons.map((reasonData, reasonIdx) => (
+                        <CallResponseCard
+                            Title={reasonData.Title}
+                            BodyText={reasonData.Text}
+                            isHoriz={false}
+                            ViewDelay={100}
+                        />
+                    
+                    ))}
+                </SimpleGrid>
 
                 <Text
                     color={'pub_layout_body_text'}
@@ -71,107 +65,16 @@ const Home = () => {
                 
                 <Box
                     h='25px'
+                    mb={'15px'}
                 >
                     <CTAButton
                         Title={WhyChooseUs.CTA_Title}
                         toLink={WhyChooseUs.CTA_Link}
                     />
                 </Box>
-                <Box
-                    w='80%'
-                    h='10px'
-                    bg={'navbar_bg'}
-                    mt='50px'
-                    mb={'50px'}
+                <WhatWeDoCard
+                
                 />
-                <VStack
-                    gap={5}
-                >
-                    <Heading
-                        fontWeight={'normal'}
-                        fontSize={['5xl', '6xl']}
-                        color={"pub_layout_title_text"}
-                        textWrap={'wrap'}
-                        lineHeight={'40px'}
-                        textAlign={'center'}
-                        textShadow={"2px 2px 2px rgba(0.0, 0.0, 0.0, 0.5)"}
-                    >
-                        {OurDifference.Title}
-                    </Heading>
-                    <HStack
-                        wrap={'wrap'}
-                        justify={'center'}
-                        gap={[25, 25, 30, 50]}
-                        pl={'50px'}
-                        pr={'50px'}
-                    >
-                        {OurDifference.Media.map((cardData, cardIdx) => {
-                            return(
-                                <Box
-                                    id={cardIdx}
-                                    bg={'card1_bg'}
-                                    w={'300px'}
-                                    h='300px'
-                                    borderRadius={'15px 15px'}
-                                >
-                                    <VStack
-                                        justify={'space-between'}
-                                        h='100%'
-                                        pb='10px'
-                                    >
-                                        <Heading
-                                            textAlign={'center'}
-                                            color={'card1_title'}
-                                            fontWeight={'normal'}
-                                            pt={'10px'}
-                                            pl={'20px'}
-                                            pr={'20px'}
-                                        >
-                                            {cardData.Caption}
-                                        </Heading>
-                                        <Box
-                                            bg={'white'}
-                                            w='80%'
-                                            h='200px'
-                                            overflow={'hidden'}
-                                            objectFit={'contain'}
-                                        >
-                                            <AspectRatio
-                                                ratio={1}
-                                                maxW="100%"
-                                                maxH="100%"
-                                                mx={'auto'}
-                                            >
-                                                <Image
-                                                    src={cardData.ThumbnailSource}
-                                                    objectFit="contain"
-                                                />
-                                            </AspectRatio>
-                                        </Box>
-                                        <Box
-                                            h='30px'
-                                        >
-                                            <CTAButton
-                                                Title={cardData.CTATitle}
-                                                toLink={cardData.CTALink}
-                                            />
-                                        </Box>
-                                        
-                                    </VStack>
-                                    
-                                </Box>
-                            )
-                        })}  
-                    </HStack>
-                    
-                </VStack> 
-                <Box
-                    w='80%'
-                    h='10px'
-                    bg={'navbar_bg'}
-                    mt={'50px'}
-                    mb={'50px'}
-                /> 
                 <VStack
                     w='80%'
                 >
@@ -186,30 +89,17 @@ const Home = () => {
                     >
                         {Experience.Title}
                     </Heading>
-                    {Experience.Experiences.map((experienceData, experienceIdx) => {
-                        return(
-                            <Box
-                                id={experienceIdx}
-                                w={['400px', '500px']}
-                                pl={'50px'}
-                                pr={'50px'}
-                            >
-                                <HStack
-                                    justify={'left'}
-                                    align={'center'}
-                                >
-                                    <Icon
-                                        as={SiPushbullet}
-                                    />
-                                    <Text
-                                        fontFamily={'body'}
-                                    >
-                                        {experienceData.yearsExp} Years {experienceData.expTitle}
-                                    </Text>
-                                </HStack>
-                            </Box>
-                        )
-                    })}
+                    <VStack>
+                        {Experience.Experiences.map((experienceData, experienceIdx) => {
+                            return(
+                                <ExperienceCard
+                                    ExperienceData={experienceData}
+                                    ViewMargin={"-150px"}
+                                />
+                            )
+                        })}
+                    </VStack>
+                    
                 </VStack>                   
                      
                 <Box

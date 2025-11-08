@@ -10,10 +10,66 @@ export const VideoHeroBanner = {
 
 export const WhyChooseUs = {
   Title: "Why Partner With Us?",
-  Text: "Dovci Forensic Consulting is an independant Forensic Science Consulting firm performing analysis and evaluation of evidence seized by law enforcement agencies in criminal cases. Our firm provides a unique combination of Forensic Science analysis as the foundation for reconstructing crimes, while developing advanced digital illustrations and 3 dimensional animations to summarize scientific analysis. Using video game computational and rendering science, we illustrate our Forensic Scientist's expert opinions as understandable dynamic exhibits that impact juries.",
+  Reasons: [
+    {
+      Title: "Experience",
+      Text: "Our service is backed by nearly 40 years of acquired experience gained from casework in an accredited forensic laboratory, investigating hundreds of crime scenes, attending hundreds of autopsies, and consulting on many criminal cases"
+    },
+    {
+      Title: "Expertise",
+      Text: "Our expertise results not only from experience, but from diverse and in depth training. Our training providers include college institutions, a basic police academy, institutional training and in-service schools, external forensic courses and seminars and personal technical pursuits"
+    },
+    {
+      Title: "Essential",
+      Text: "The service we offer is essential to your success. No attorney wants to provide ineffectual counsel. Our firm provides critical insights and opinions resulting from years of expert analysis and service to both prosecutors and defense attorneys. Partnering with DFC will allow you to have the confidence that stems from real knowledge and facts which allows you to provide the best defense for your client"
+    }
+  ],
   CTA_Title: "Contact Us",
   CTA_Link: "/contact",
 };
+
+export const DoForYou = {
+  Title: "What can we do for you?",
+  Text: "If you are like most criminal defense attorneys, you start a case with a massive discovery file. You screen it well enough to decide that you need help to put the case in perspective. That’s where we come in. You know enough about our firm to know we have the experience and knowledge to help you do just that. Here is what we can do for you.",
+  WeDos: [
+    {
+      Title: "Review",
+      Text: "We review crime scene investigations to identify potentially exculpatory evidence that may be crucial to an effective defense for your client."
+    },
+    {
+      Title: "Explain",
+      Text: "We will tell you in understandable terms what investigators, forensic scientists and pathologists are saying in their reports"
+    },
+    {
+      Title: "Evaluate",
+      Text: "We evaluate the forensic processes utilized by police agencies to investigate crime scenes and determine additional areas of meaningful investigation."
+    },
+    {
+      Title: "Examine",
+      Text: "We examine physical evidence that may be probative and relevant to the defense of your client."
+    },
+    {
+      Title: "Reconstruct",
+      Text: "We reconstruct shooting scenes and determine critical factors such as shooter and victim positioning and movements, bullet trajectories, and blood spatter patterns."
+    },
+    {
+      Title: "Improve",
+      Text: "We analyze police generated 3D scene laser scans, scene security audio-video evidence and produce enhanced renderings and images."
+    },
+    {
+      Title: "Write",
+      Text: "We write analytical reports documenting forensic analytical findings and how they were obtained"
+    },
+    {
+      Title: "Testify",
+      Text: "We provide expert witness testimony about the observations, findings and opinions we include in our reports."
+    },
+    {
+      Title: "Demonstrate",
+      Text: "We produce technical and scientific illustrations as well as accurate 3D renderings and videos of crime scene theories and reconstructions."
+    }
+  ]
+}
 
 export const OurDifference = {
   Title: "State-of-the-Art Forensic Technologies",
@@ -50,31 +106,42 @@ export const Experience = {
   Title: "Experience You Can Trust",
   Experiences: [
     {
-      yearsExp: "34+",
-      expTitle: "Scientific Illustration & Court Exhibit Creation",
-      description: "Began producing scientifically accurate diagrams for legal proceedings.",
+        Years: "25",
+        Description: "Years of Forensic Scientist Experience in an ASCLD/LAB ISO 17025 Accredited Laboratory System"
     },
     {
-      yearsExp: "25+",
-      expTitle: "Accredited Forensic Lab Case Work",
-      description: "Processed thousands of cases in ISO 17025-compliant laboratories.",
+        Years: "25",
+        Description: "Years as a Certified Police Officer with Regular Training in Use of Force, Firearms Proficiency, and Defense Tactics"
     },
     {
-      yearsExp: "20+",
-      expTitle: "Death & Crime Scene Investigations",
-      description: "Conducted on-site forensic analysis and evidence documentation.",
+        Years: "2",
+        Description: "Years as an AMBDI Nationally Certified Medical Legal Death Investigator."
     },
     {
-      yearsExp: "12+",
-      expTitle: "Forensic Consulting",
-      description: "Established independent expert witness and consulting practice.",
+      Years: "12",
+      Description: "Years as an Independent Forensic Consultant Contracting with Retained Criminal Defense Attorneys, Public Defenders, and Civil Attorneys"
     },
     {
-      yearsExp: "2+",
-      expTitle: "Medicolegal Death Investigations",
-      description: "Collaborated with medical examiners on complex fatality cases.",
+      Years: "",
+      Description: "Court Qualified Expertise in Firearms and Toolmarks, Shooting Scene Reconstruction, Crime Scene Processing, Bloodstain Pattern Analysis, Footwear and Tire Impression Analysis"
     },
-]
+    {
+      Years: "33",
+      Description: "Years as a Forensic Scientist and Medical Illustrator"
+    },
+    {
+      Years: "200+",
+      Description: "Crime Scene Investigations"
+    },
+    {
+      Years: "200+",
+      Description: "Forensic Autopsy Assists"
+    },
+    {
+      Years: "",
+      Description: "Crime Scene Processor and Photographer"
+    }
+  ]
 }
 
 
