@@ -48,7 +48,11 @@ const ExperienceCard = ({ExperienceData, ViewMargin}) => {
                     <Text>
                         {ExperienceData.Years}
                     </Text>
-                    <Text>
+                    <Text
+                        fontFamily={'body'}
+                        fontSize={'sm'}
+                        color={"{colors.golden_wheat}"}
+                    >
                         {ExperienceData.Description}
                     </Text>
                 </HStack>

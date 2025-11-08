@@ -1,5 +1,12 @@
 // src/data/HomeData.js
 
+import { FaBookReader, FaPeopleArrows, FaSortAmountUpAlt } from "react-icons/fa";
+import { FaMagnifyingGlass, FaPeopleRobbery } from "react-icons/fa6";
+import { GiInjustice } from "react-icons/gi";
+import { HiDocumentMagnifyingGlass } from "react-icons/hi2";
+import { RiSpeakFill } from "react-icons/ri";
+import { TfiWrite } from "react-icons/tfi";
+
 export const VideoHeroBanner = {
     Title: "Dovci Forensic Consulting",
     Body: "Expert Forensic Services",
@@ -34,39 +41,48 @@ export const DoForYou = {
   WeDos: [
     {
       Title: "Review",
-      Text: "We review crime scene investigations to identify potentially exculpatory evidence that may be crucial to an effective defense for your client."
+      Text: "We review crime scene investigations to identify potentially exculpatory evidence that may be crucial to an effective defense for your client.",
+      Icon: FaBookReader
     },
     {
       Title: "Explain",
-      Text: "We will tell you in understandable terms what investigators, forensic scientists and pathologists are saying in their reports"
+      Text: "We will tell you in understandable terms what investigators, forensic scientists and pathologists are saying in their reports",
+      Icon: RiSpeakFill
     },
     {
       Title: "Evaluate",
-      Text: "We evaluate the forensic processes utilized by police agencies to investigate crime scenes and determine additional areas of meaningful investigation."
+      Text: "We evaluate the forensic processes utilized by police agencies to investigate crime scenes and determine additional areas of meaningful investigation.",
+      Icon: HiDocumentMagnifyingGlass
     },
     {
       Title: "Examine",
-      Text: "We examine physical evidence that may be probative and relevant to the defense of your client."
+      Text: "We examine physical evidence that may be probative and relevant to the defense of your client.",
+      Icon: FaMagnifyingGlass
     },
     {
       Title: "Reconstruct",
-      Text: "We reconstruct shooting scenes and determine critical factors such as shooter and victim positioning and movements, bullet trajectories, and blood spatter patterns."
+      Text: "We reconstruct shooting scenes and determine critical factors such as shooter and victim positioning and movements, bullet trajectories, and blood spatter patterns.",
+      Icon: FaPeopleRobbery
     },
     {
       Title: "Improve",
-      Text: "We analyze police generated 3D scene laser scans, scene security audio-video evidence and produce enhanced renderings and images."
+      Text: "We analyze police generated 3D scene laser scans, scene security audio-video evidence and produce enhanced renderings and images.",
+      Icon: FaSortAmountUpAlt
     },
     {
       Title: "Write",
-      Text: "We write analytical reports documenting forensic analytical findings and how they were obtained"
+      Text: "We write analytical reports documenting forensic analytical findings and how they were obtained",
+      Icon: TfiWrite
     },
     {
       Title: "Testify",
-      Text: "We provide expert witness testimony about the observations, findings and opinions we include in our reports."
+      Text: "We provide expert witness testimony about the observations, findings and opinions we include in our reports.",
+      Icon: GiInjustice
     },
     {
       Title: "Demonstrate",
-      Text: "We produce technical and scientific illustrations as well as accurate 3D renderings and videos of crime scene theories and reconstructions."
+      Text: "We produce technical and scientific illustrations as well as accurate 3D renderings and videos of crime scene theories and reconstructions.",
+      Icon: FaPeopleArrows
     }
   ]
 }

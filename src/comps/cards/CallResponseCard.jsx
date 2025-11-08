@@ -1,7 +1,8 @@
-import { Box, chakra, Heading, HStack, Icon, Text, VStack } from "@chakra-ui/react";
+import { Box, chakra, HStack, Icon, VStack } from "@chakra-ui/react";
 import shouldForwardProp from "@emotion/is-prop-valid";
 import { isValidMotionProp, motion, useInView, Variants } from "framer-motion";
 import { GiPistolGun } from "react-icons/gi";
+
 import { useRef } from "react";
 
 const MotionBox = chakra(motion.div, {
@@ -50,24 +51,29 @@ const CallResponseCard = ({
             gap={0}
             textAlign={'center'}
         >
-            <MotionHeading
+            <HStack
                 pt={['0px', '10px']}
                 pl={['0px', '90px']}
-                initial={{scale: 0}}
-                variants={{
-                    visible: {
-                        scale: 1,
-                        transition: {duration: 0.5, ease: 'easeInOut'}
-                    }
-                }}
-                fontSize="5xl"
-                fontFamily="heading"
-                color="{colors.deep_gray}"
-                mb={["-40px", "-40px"]}
-                zIndex={2}
             >
-                {Title}
-            </MotionHeading>
+                <MotionHeading
+                    
+                    initial={{scale: 0}}
+                    variants={{
+                        visible: {
+                            scale: 1,
+                            transition: {duration: 0.5, ease: 'easeInOut'}
+                        }
+                    }}
+                    fontSize="5xl"
+                    fontFamily="heading"
+                    color="{colors.deep_gray}"
+                    mb={["-40px", "-40px"]}
+                    zIndex={2}
+                >
+                    {Title}
+                </MotionHeading>
+            </HStack>
+            
           
             <Box
                 w='100%'
