@@ -23,13 +23,12 @@ const WeDoCard = ({weDoData, ViewMargin}) => {
         <MotionBox
             ref={ref}
             animate={isInView ? 'visible' : 'hidden'}
-            w={['100%', '300px']}
+            w={['100%']}
+            maxW={"250px"}
             bg={'{colors.soft_wheat}'}
             borderRadius={'15px'}
             initial={{opacity:0}}
             overflow={'hidden'}
-            position={'relative'}
-            
             variants={{
                 visible: {
                     opacity: 1,
@@ -38,7 +37,8 @@ const WeDoCard = ({weDoData, ViewMargin}) => {
             }}
         >
             <HStack
-                alignContent={'center'}
+                //alignContent={'center'}
+                w='100%'
                 justifyContent={'center'}
                 pb={'5px'}
             >
@@ -61,8 +61,6 @@ const WeDoCard = ({weDoData, ViewMargin}) => {
                     color={"{colors.deep_gray}"}
                     fontWeight={'normal'}
                     lineHeight={['15px', '50px']}
-                    pl={['0px', '50px']}
-                    pr={['0px', '50px']}
                     pt={['15px', '0px']}
                     pb={['5px', '0px']}
                     textAlign={'center'}
@@ -81,7 +79,8 @@ const WeDoCard = ({weDoData, ViewMargin}) => {
             <Box
                 bg={'{colors.golden_wheat}'}
                 borderBottomRadius={'10px'}
-                h='130px'
+                h={['130px', '100px', '90px']}
+                
                 ml={'5px'}
                 mr={'5px'}
                 mb={'5px'}
@@ -162,7 +161,7 @@ const WhatWeDoCard = (props) => {
                     {DoForYou.Text}
                 </Text>
                 <SimpleGrid
-                    columns={[2, 3]}
+                    columns={[2, 2, 2, 3]}
                     gap={[5]}
                     pr={'15px'}
                     pl={'15px'}
