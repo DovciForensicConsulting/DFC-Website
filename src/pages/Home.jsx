@@ -1,13 +1,11 @@
-import { AspectRatio, Box, GridItem, Heading, HStack, Icon, Image, SimpleGrid, Text, VStack } from '@chakra-ui/react';
+import { Box, Heading, HStack, Icon, Image, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import HeroBanner from "../comps/banners/HeroBanner";
 import { Experience, OurDifference, WhatWeDo, WhyChooseUs } from '../data/HomeData';
 import CTAButton from '../comps/buttons/CTAButton';
-import { FiAward, FiFileText, FiShield } from 'react-icons/fi';
-import { FaCheck } from 'react-icons/fa';
-import { SiPushbullet } from 'react-icons/si';
 import CallResponseCard from '../comps/cards/CallResponseCard';
 import WhatWeDoCard from '../comps/cards/WhatWeDoCard';
 import ExperienceCard from '../comps/cards/ExperienceCard';
+import ExperienceModule from '../comps/cards/ExperienceModule';
 
 const Home = () => {
   return (
@@ -75,128 +73,9 @@ const Home = () => {
                 <WhatWeDoCard
                 
                 />
-                <VStack
-                    w='80%'
-                >
-                    <Heading
-                        fontWeight={'normal'}
-                        fontSize={['5xl', '6xl']}
-                        color={"pub_layout_title_text"}
-                        textWrap={'wrap'}
-                        lineHeight={'40px'}
-                        textAlign={'center'}
-                        textShadow={"2px 2px 2px rgba(0.0, 0.0, 0.0, 0.5)"}
-                    >
-                        {Experience.Title}
-                    </Heading>
-                    <VStack>
-                        {Experience.Experiences.map((experienceData, experienceIdx) => {
-                            return(
-                                <ExperienceCard
-                                    ExperienceData={experienceData}
-                                    ViewMargin={"-150px"}
-                                />
-                            )
-                        })}
-                    </VStack>
-                    
-                </VStack>                   
-                     
-                <Box
-                    w='80%'
-                    h='10px'
-                    bg={'navbar_bg'}
-                    mt={'50px'}
-                    mb={'50px'}
-                /> 
-                <VStack
-                    gap={5}
-                >
-                    <Heading
-                        fontWeight={'normal'}
-                        fontSize={['5xl', '6xl']}
-                        color={"pub_layout_title_text"}
-                        textWrap={'wrap'}
-                        lineHeight={'40px'}
-                        textAlign={'center'}
-                        textShadow={"2px 2px 2px rgba(0.0, 0.0, 0.0, 0.5)"}
-                    >
-                        {WhatWeDo.Title}
-                    </Heading> 
-                    <Text
-                        color={'pub_layout_body_text'}
-                        fontFamily={'body'}
-                        fontSize={'med'}
-                        ml={['50px', '100px']}
-                        mr={['50px', '100px']}
-                        maxW={'1000px'}
-                        textAlign={'center'}
-                    >
-                        {WhatWeDo.Text}
-                    </Text>
-                </VStack>
-                <HStack
-                    wrap={'wrap'}
-                    justify={'space-evenly'}
-                    gap={5}
-                    maxW={'1000px'}
-                >
-                    {WhatWeDo.List.map((serviceTitle, serviceIdx) => {
-                        return(
-                            <Box
-                                id={serviceIdx}
-                                bg={'{colors.soft_wheat}'}
-                                borderRadius={'15px 15px'}
-                                style={{
-                                    "filter": "drop-shadow(2px 2px 2px rgba(0.0, 0.0, 0.0, 0.5))"
-                                }}
-                            >
-                                <HStack
-                                    pl={'20px'}
-                                    pr={'20px'}
-                                    pt={'10px'}
-                                    pb={'10px'}
-                                    color={'{color.deep_gray}'}
-                                    fontFamily={'body'}
-                                    fontSize={'med'}
-                                    textAlign={'center'}
-                                >
-                                    <Icon
-                                        as={FaCheck}
-                                        fill={'{colors.golden_wheat}'}
-                                    />
-                                    <Text>
-                                        {serviceTitle}
-                                    </Text>
-                                </HStack>
-                            </Box>
-                        )
-                    })}
-                </HStack>
-                <HStack
-                    mt={'50px'}
-                    gap={50}
-                    w={'500px'}
-                    justify={'center'}
-                >
-                    <Box
-                        h='30px'
-                        w='150px'
-                    >
-                        <CTAButton
-                            Title={WhatWeDo.CTA1_Title}
-                            toLink={WhatWeDo.CTA1_Link}
-                        />
-                    </Box>
-                    <Box
-                        h='30px'
-                    >
-                        <CTAButton
-                            Title={WhatWeDo.CTA2_Title}
-                            toLink={WhatWeDo.CTA2_Link}
-                        />
-                    </Box>
-                </HStack>
+                <ExperienceModule/>
+                 
+                
             </VStack>
         
         

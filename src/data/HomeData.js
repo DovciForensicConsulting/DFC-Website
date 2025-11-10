@@ -122,30 +122,6 @@ export const Experience = {
   Title: "Experience You Can Trust",
   Experiences: [
     {
-        Years: "25",
-        Description: "Years of Forensic Scientist Experience in an ASCLD/LAB ISO 17025 Accredited Laboratory System"
-    },
-    {
-        Years: "25",
-        Description: "Years as a Certified Police Officer with Regular Training in Use of Force, Firearms Proficiency, and Defense Tactics"
-    },
-    {
-        Years: "2",
-        Description: "Years as an AMBDI Nationally Certified Medical Legal Death Investigator."
-    },
-    {
-      Years: "12",
-      Description: "Years as an Independent Forensic Consultant Contracting with Retained Criminal Defense Attorneys, Public Defenders, and Civil Attorneys"
-    },
-    {
-      Years: "",
-      Description: "Court Qualified Expertise in Firearms and Toolmarks, Shooting Scene Reconstruction, Crime Scene Processing, Bloodstain Pattern Analysis, Footwear and Tire Impression Analysis"
-    },
-    {
-      Years: "33",
-      Description: "Years as a Forensic Scientist and Medical Illustrator"
-    },
-    {
       Years: "200+",
       Description: "Crime Scene Investigations"
     },
@@ -154,9 +130,35 @@ export const Experience = {
       Description: "Forensic Autopsy Assists"
     },
     {
-      Years: "",
+        Years: "25 Years",
+        Description: "Forensic Scientist Experience in an ASCLD/LAB ISO 17025 Accredited Laboratory System"
+    },
+    {
+        Years: "25 Years",
+        Description: "Certified Police Officer with Regular Training in Use of Force, Firearms Proficiency, and Defense Tactics"
+    },
+    {
+        Years: "2 Years",
+        Description: "AMBDI Nationally Certified Medical Legal Death Investigator."
+    },
+    {
+      Years: "12 Years",
+      Description: "Independent Forensic Consultant Contracting with Retained Criminal Defense Attorneys, Public Defenders, and Civil Attorneys"
+    },
+    {
+      Years: "33 Years",
+      Description: "Court Qualified Expertise in Firearms and Toolmarks, Shooting Scene Reconstruction, Crime Scene Processing, Bloodstain Pattern Analysis, Footwear and Tire Impression Analysis"
+    },
+    {
+      Years: "33 Years",
+      Description: "Forensic Scientist and Medical Illustrator"
+    },
+    {
+      Years: "33 Years",
       Description: "Crime Scene Processor and Photographer"
-    }
+    },
+    
+    
   ]
 }
 
