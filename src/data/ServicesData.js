@@ -4,6 +4,49 @@
 // 1. SERVICES
 // ————————————————————————————————————————
 export const ServicesData = {
+  Title: "Expert Solutions",
+  Services: [
+    {
+      Title: "Firearms and Toolmark Testing",
+      Description: "Identification of caliber, general rifling characteristics (GRC), bullet manufacturer identification, list of possible firearms based on GRC, microscopic comparison of bullets from a known firearm to bullets collected as evidence, comparison of tools to evidence markings, function testing of firearms, examination of firearms for alteration and defects, evaluation semi-automatic versus fully automatic actions",
+      ImageSrc: "https://images.pexels.com/photos/6090789/pexels-photo-6090789.jpeg"
+      //Picture of Bullet Scope
+    },
+    {
+      Title: "Shooting Scene Reconstruction",
+      Description: "Determination of number of shots fired, identification of bullet defects (i.e. Ricochet), trigonometric calculation of trajectory angles, evaluation of terminal ballistics in bodies and other substrates, trajectory paths through human bodies, ammunition performance evaluation, ejection pattern evaluation, bullet trajectories through glass, ballistic calculations, Review of postmortem exam pathology reports pertaining to gunshots",
+      ImageSrc: "https://ars.els-cdn.com/content/image/1-s2.0-S0379073812002587-gr5.jpg"
+      // Picture of Poser dude shooting another dude
+    },
+    {
+      Title: "Crime Scene Investigation",
+      Description: "Evidence collection technique evaluation, review of crime scene photography, review of evidence logs, evaluate law enforcement processing techniques and methods, review for contamination issues, review evidence collected and forensic testing performed",
+      ImageSrc: "https://images.pexels.com/photos/10481293/pexels-photo-10481293.jpeg"
+      // Picture of blurry scene with crime scene tape
+    },
+    {
+      Title: "Bloodstain Pattern Analysis",
+      Description: "Examination of blood stain photographic documentation, identification of common blood stain types from scene photographs, reconstruction of area of origin from scale impact spatter photographs, pattern sequencing and source movements",
+      ImageSrc: "https://source.roboflow.com/NFAJTLOnxsP6LHU2qKOtfiFD3f62/5vMgX6vYYeN5O2xQE2Pt/original.jpg"
+      // Picture of Blood Pattern
+    },
+    {
+      Title: "Medical Illustration",
+      Description: "Creation of renderings of 3D lifelike human models with wound and injury simulation",
+      ImageSrc: "https://images.stockcake.com/public/7/0/a/70a36fe8-7ea6-4ae0-8cfe-5909fee4ebca_large/digital-anatomy-explorer-stockcake.jpg"
+      // Picture of transparent body
+    },
+    {
+      Title: "3D crime scene diagrams",
+      Description: "Creation of 3D crime scene models with individual view renderings and 3D viewable digital models with helicopter view capable models",
+      ImageSrc: "https://images.squarespace-cdn.com/content/v1/61f0082dc9247367c52719b7/cccb8c82-a124-47c1-a64e-4031993e05ea/Screenshot+from+2023-02-09+14-18-21.jpg"
+      //Use you picture from Pendleton smoke shop
+    },
+  ]
+};
+
+
+export const ServicesDatas = {
   Title: "Services",
   Text: "At Dovci Forensic Consulting we offer a comprehensive list of services to fit your teams needs.",
   Services: [

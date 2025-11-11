@@ -6,6 +6,7 @@ import CallResponseCard from '../comps/cards/CallResponseCard';
 import WhatWeDoCard from '../comps/cards/WhatWeDoCard';
 import ExperienceCard from '../comps/cards/ExperienceCard';
 import ExperienceModule from '../comps/cards/ExperienceModule';
+import ServicesPreviewModule from '../comps/cards/ServicesPreviewModule';
 
 const Home = () => {
   return (
@@ -18,10 +19,14 @@ const Home = () => {
             <Box
                 w='100%'
                 h={'10px'}
-                bg={'navbar_bg'}
+                bg={'golden_wheat'}
                 mb={'50px'}
+                position={'absolute'}
+                zIndex={5}
             />
+            <ServicesPreviewModule/>
             <VStack
+                mt='30px'
                 gap={5}
                 pb={'50px'}
             >

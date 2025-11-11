@@ -20,7 +20,7 @@ const HeroBanner = (props) => {
         left={0}
         right={0}
         bottom={0}
-        zIndex={0}
+        zIndex={5}
         filter="blur(8px) sepia(0.45) brightness(0.9) contrast(1.1)" // Adjust blur strength
         transform="scale(1.05)" // Prevents blur edge artifacts
         overflow="hidden"
@@ -48,7 +48,7 @@ const HeroBanner = (props) => {
         right={0}
         bottom={0}
         left={0}
-        zIndex={1}
+        zIndex={6}
       >
         <VStack
           position="absolute"
@@ -103,12 +103,14 @@ const HeroBanner = (props) => {
               <CTAButton
                 Title={VideoHeroBanner.CTA_Button_Title}
                 toLink={'/contact'}
+                Variant={0}
               />
             </Box>
           </Link>
         </VStack>
         
       </Box>
+      
     </Box>
   )
 }

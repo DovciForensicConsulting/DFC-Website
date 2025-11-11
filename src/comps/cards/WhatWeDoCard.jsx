@@ -3,6 +3,7 @@ import shouldForwardProp from "@emotion/is-prop-valid";
 import { isValidMotionProp, motion, useInView } from "framer-motion";
 import { DoForYou } from "../../data/HomeData";
 import { useRef } from "react";
+import CTAButton from "../buttons/CTAButton";
 
 const MotionBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -117,20 +118,27 @@ const WhatWeDoCard = (props) => {
   return (
     <MotionBox
         w='100%'
-        pt={'50px'}
-        pb={'50px'}
+        //pt={'50px'}
+        //pb={'50px'}
         bg={'{colors.deep_gray}'}
         initial={{skewY: 3}}
         alignContent={'center'}
-        style={{
-            "filter": 'drop-shadow(0px 0px 4px rgba(0, 0, 0, 1))'
-        }}
     >
+        <Box
+            w='100%'
+            h='5px'
+            bg={'deep_gray'}
+            style={{
+                filter: 'drop-shadow(-3px -3px 2px rgba(0, 0, 0, 1.0))'
+            }}
+        />  
         <MotionBox
             w='100%'
             initial={{skewY: -3}}
             display={'flex'}
             justifyContent={'center'}
+            pt={'25px'}
+            pb='25px'
         >
             
             <VStack
@@ -175,13 +183,21 @@ const WhatWeDoCard = (props) => {
                         )
                     })}
                 </SimpleGrid>
-                <Button>
-                    View Services
-                </Button>
+                <CTAButton
+                    Title={"View Services"}
+                    toLink={"/services"}
+                />
             </VStack>
         </MotionBox>
             
-            
+        <Box
+            w='100%'
+            h='5px'
+            bg={'deep_gray'}
+            style={{
+                filter: 'drop-shadow(3px 3px 2px rgba(0, 0, 0, 1.0))'
+            }}
+        />  
 
         
 

@@ -37,7 +37,7 @@ export const WhyChooseUs = {
 
 export const DoForYou = {
   Title: "What can we do for you?",
-  Text: "If you are like most criminal defense attorneys, you start a case with a massive discovery file. You screen it well enough to decide that you need help to put the case in perspective. That’s where we come in. You know enough about our firm to know we have the experience and knowledge to help you do just that. Here is what we can do for you.",
+  Text: "If you are like most criminal defense attorneys, you start a case with a massive discovery file. You screen it well enough to decide that you need help to put the case in perspective. That’s where we come in. You know enough about our firm to know that we have the experience and knowledge to help you do just that. Here is what we can do for you.",
   WeDos: [
     {
       Title: "Review",

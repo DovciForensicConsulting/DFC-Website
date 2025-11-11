@@ -5,6 +5,7 @@ import { isValidMotionProp, motion, useInView, AnimatePresence } from "framer-mo
 import { useGesture } from '@use-gesture/react';
 import { Experience } from '../../data/HomeData';
 import { GiPistolGun } from 'react-icons/gi';
+import CTAButton from '../buttons/CTAButton';
 
 const MotionBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -179,7 +180,7 @@ const ExperienceCarousel = ({ experienceData }) => {
 const ExperienceModule = () => {
   return (
     <MotionBox
-      initial={{ skewY: -4 }}
+      initial={[{ skewY: -4 }, { skewY: -2 }]}
       mt={['15px', "50px"]}
       zIndex={0}
       bg="{colors.soft_wheat}"
@@ -195,7 +196,7 @@ const ExperienceModule = () => {
       }}
     >
       <MotionBox
-        initial={{ skewY: 4 }}
+        initial={[{ skewY: 4 }, { skewY: 2 }]}
         w="100%"
         style={{ transformOrigin: 'top left' }}
         textAlign="center"
@@ -215,12 +216,16 @@ const ExperienceModule = () => {
           </MotionHeading>
             
           <ExperienceCarousel experienceData={Experience.Experiences} />
-          <Button
-            mt={'10px'}
-            mb={'15px'}
+          <Box
+            pt='15px'
           >
-            Contact Us
-          </Button>
+            <CTAButton
+                Title={"Contact Us"}
+                toLink={"/contact"}
+                Variant={1}
+            />
+          </Box>
+          
         </VStack>
       </MotionBox>
     </MotionBox>
