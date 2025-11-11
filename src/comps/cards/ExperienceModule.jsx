@@ -93,32 +93,53 @@ const ExperienceSlide = ({
 const ExperienceCarousel = ({ experienceData }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
+  const intervalRef = useRef(null);
 
-  // Auto-rotate
-  useEffect(() => {
-    const id = setInterval(() => {
+  // Function to start/reset the auto-rotate timer
+  const startAutoRotate = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
+    intervalRef.current = setInterval(() => {
       setDirection(1);
       setCurrentSlide((i) => (i + 1) % experienceData.length);
     }, 4000);
-    return () => clearInterval(id);
+  };
+
+  // Initial auto-rotate
+  useEffect(() => {
+    startAutoRotate();
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, [experienceData.length]);
 
-  // Swipe gesture – now works on touch
+  // Swipe gesture – resets timer on drag end
   const bind = useGesture(
     {
       onDragEnd: ({ movement: [mx] }) => {
         const THRESHOLD = 50;
         if (Math.abs(mx) < THRESHOLD) return;
 
+        let newDirection = 0;
+        let newIndex = currentSlide;
+
         if (mx > 0) {
           // Swipe right → previous
-          setDirection(-1);
-          setCurrentSlide((i) => (i - 1 + experienceData.length) % experienceData.length);
+          newDirection = -1;
+          newIndex = (currentSlide - 1 + experienceData.length) % experienceData.length;
         } else {
           // Swipe left → next
-          setDirection(1);
-          setCurrentSlide((i) => (i + 1) % experienceData.length);
+          newDirection = 1;
+          newIndex = (currentSlide + 1) % experienceData.length;
         }
+
+        setDirection(newDirection);
+        setCurrentSlide(newIndex);
+
+        // Reset timer after swipe
+        startAutoRotate();
       },
     },
     {
@@ -129,6 +150,13 @@ const ExperienceCarousel = ({ experienceData }) => {
       },
     }
   );
+
+  // Handle dot click – also resets timer
+  const handleDotClick = (idx) => {
+    setDirection(idx > currentSlide ? 1 : -1);
+    setCurrentSlide(idx);
+    startAutoRotate(); // Reset timer
+  };
 
   return (
     <VStack spacing={4} align="center" w="100%" maxW="800px" mx="auto">
@@ -142,7 +170,7 @@ const ExperienceCarousel = ({ experienceData }) => {
         cursor="grab"
         _active={{ cursor: 'grabbing' }}
         userSelect="none"
-        touchAction="pan-y" // allows vertical scroll
+        touchAction="pan-y"
       >
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <ExperienceSlide
@@ -161,10 +189,7 @@ const ExperienceCarousel = ({ experienceData }) => {
           <Box
             key={idx}
             cursor="pointer"
-            onClick={() => {
-              setDirection(idx > currentSlide ? 1 : -1);
-              setCurrentSlide(idx);
-            }}
+            onClick={() => handleDotClick(idx)}
             w={2}
             h={2}
             borderRadius="full"

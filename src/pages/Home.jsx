@@ -1,10 +1,9 @@
-import { Box, Heading, HStack, Icon, Image, SimpleGrid, Text, VStack } from '@chakra-ui/react';
+import { Box, Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import HeroBanner from "../comps/banners/HeroBanner";
-import { Experience, OurDifference, WhatWeDo, WhyChooseUs } from '../data/HomeData';
+import { WhyChooseUs } from '../data/HomeData';
 import CTAButton from '../comps/buttons/CTAButton';
 import CallResponseCard from '../comps/cards/CallResponseCard';
 import WhatWeDoCard from '../comps/cards/WhatWeDoCard';
-import ExperienceCard from '../comps/cards/ExperienceCard';
 import ExperienceModule from '../comps/cards/ExperienceModule';
 import ServicesPreviewModule from '../comps/cards/ServicesPreviewModule';
 
@@ -42,7 +41,7 @@ const Home = () => {
                     {WhyChooseUs.Title}
                 </Heading>
 
-            <SimpleGrid columns={1} gap={6} alignContent="center" justifyItems={'center'}>
+            <SimpleGrid columns={1} gap={6} alignContent="center" justifyItems={'center'} minH={'500px'}>
                     {WhyChooseUs.Reasons.map((reasonData, reasonIdx) => (
                         <CallResponseCard
                             Title={reasonData.Title}

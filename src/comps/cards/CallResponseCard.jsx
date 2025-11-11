@@ -1,4 +1,4 @@
-import { Box, chakra, HStack, Icon, VStack } from "@chakra-ui/react";
+import { Box, chakra, HStack, Icon, SkeletonText, VStack } from "@chakra-ui/react";
 import shouldForwardProp from "@emotion/is-prop-valid";
 import { isValidMotionProp, motion, useInView, Variants } from "framer-motion";
 import { GiPistolGun } from "react-icons/gi";

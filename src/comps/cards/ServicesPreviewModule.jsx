@@ -7,16 +7,14 @@ import {
   Heading,
   HStack,
   Image,
-  Text,
   VStack,
   useBreakpointValue,
-  Button,
+  Skeleton,
 } from '@chakra-ui/react';
 import shouldForwardProp from '@emotion/is-prop-valid';
 import {
   motion,
   AnimatePresence,
-  useInView,
   isValidMotionProp,
 } from 'framer-motion';
 import { useGesture } from '@use-gesture/react';
@@ -45,6 +43,8 @@ const ServiceCard = ({ title, imageSrc, isActive, direction }) => {
     }),
   };
 
+  const [imageLoading, setImageLoading] = useState(true);
+  const [headingLoading, setHeadingLoading] = useState(true);
   return (
     <MotionBox
         custom={direction}
@@ -63,16 +63,22 @@ const ServiceCard = ({ title, imageSrc, isActive, direction }) => {
         boxShadow="md"
         bg="golden_wheat"
     >
-      <Image
-        borderRadius={'15px'}
-        src={imageSrc}
-        alt={title}
-        objectFit="cover"
-        w="full"
-        h={{ base: '140px', md: '180px' }}
-        p={'10px'}
-      />
-      <Box p={3} bg="golden_wheat">
+        <Skeleton
+            loading={imageLoading}
+        >
+            <Image
+                borderRadius={'15px'}
+                src={imageSrc}
+                alt={title}
+                objectFit="cover"
+                w="full"
+                h={{ base: '140px', md: '180px' }}
+                p={'10px'}
+                onLoad={() => setImageLoading(false)}
+            />
+        </Skeleton>
+      
+      <Box p={3} bg="golden_wheat">        
         <Heading
             color={'soft_wheat'}
             fontWeight={'normal'}
@@ -81,9 +87,10 @@ const ServiceCard = ({ title, imageSrc, isActive, direction }) => {
             style={{
                 filter: 'drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))',
             }}
+            onLoad={() => setHeadingLoading(false)}
         >
-          {title}
-        </Heading>
+            {title}
+        </Heading>        
       </Box>
     </MotionBox>
   );

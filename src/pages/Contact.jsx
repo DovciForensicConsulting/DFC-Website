@@ -1,6 +1,7 @@
 import { Box, Heading, HStack, Text, VStack } from '@chakra-ui/react'
 import { ContactData } from '../data/ContactData'
 import DFCLogo from '../comps/custom_icons/DFCLogo';
+import ContactForm from '../comps/forms/ContactForm';
 
 const Mailto = ({ email, subject = '', body = '', children }) => {
   let params = subject || body ? '?' : '';
@@ -22,7 +23,7 @@ const Callto = ({phone, children}) => {
   )
 };
 
-const Contact = () => {
+const Contacts = () => {
   return (
     <VStack
       pt='50px'
@@ -167,6 +168,30 @@ const Contact = () => {
         </Box>
         
     </VStack>
+  )
+}
+
+
+const Contact = () => {
+  return(
+    <Box
+      minH={'100vh'}
+      mt='75px'
+    >
+        <VStack>
+          <Heading
+            fontWeight={'normal'}
+            fontSize={['5xl', '6xl']}
+            color={"pub_layout_title_text"}
+            textWrap={'wrap'}
+            lineHeight={'40px'}
+            textAlign={'center'}
+          >
+            Contact Us
+          </Heading>
+          <ContactForm/>
+        </VStack>
+    </Box>
   )
 }
 
