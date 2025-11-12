@@ -24,7 +24,7 @@ const Contact = () => {
           <ContactForm/>
           <VStack
             align={'start'}
-            bg={'soft_wheat'}
+            bg={'deep_gray'}
             p={"5px 50px 5px 50px"}
             borderRadius={'15px'}
           >
@@ -35,7 +35,7 @@ const Contact = () => {
             >
               <Heading
                 fontWeight={'light'}
-                color={'deep_gray'}
+                color={'soft_wheat'}
               >
                 Email:
               </Heading>
@@ -45,9 +45,9 @@ const Contact = () => {
                 <Text
                   fontFamily={'mono'}
                   fontSize={'lg'}
-                  color={'deep_gray'}
+                  color={'golden_wheat'}
                   _hover={{
-                    color:'golden_wheat'
+                    color:'soft_wheat'
                   }}
                 >
                   {ContactData.Email}
@@ -63,7 +63,7 @@ const Contact = () => {
             >
               <Heading
                 fontWeight={'light'}
-                color={'deep_gray'}
+                color={'soft_wheat'}
               >
                 Phone:
               </Heading>
@@ -73,9 +73,9 @@ const Contact = () => {
                 <Text
                   fontFamily={'mono'}
                   fontSize={'lg'}
-                  color={'deep_gray'}
+                  color={'golden_wheat'}
                   _hover={{
-                    color:'golden_wheat'
+                    color:'soft_wheat'
                   }}
                 >
                   {ContactData.Phone}

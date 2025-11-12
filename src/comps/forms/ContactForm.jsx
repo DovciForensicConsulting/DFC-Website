@@ -34,7 +34,7 @@ const ContactForm = () => {
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
 
-  const MAX_CHARACTERS = 1024;
+  const MAX_CHARACTERS = 2048;
   const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
   const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
   const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
