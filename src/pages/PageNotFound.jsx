@@ -1,6 +1,7 @@
 import { Box, Heading, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import DFCLogo from '../comps/custom_icons/DFCLogo'
+import CTAButton from '../comps/buttons/CTAButton'
 
 const PageNotFound = () => {
   return (
@@ -34,6 +35,7 @@ const PageNotFound = () => {
             pt='50px'
             w='500px'
             alignContent={'center'}
+            mb={'50px'}
         >
             <DFCLogo
                 logoWith={'100%'}
@@ -42,6 +44,11 @@ const PageNotFound = () => {
                 DropShadow={"2px 2px 2px rgba(0.0, 0.0, 0.0, 0.5)"}
             />
         </Box>
+        <CTAButton
+            Title={"Go Home"}
+            toLink={'/'}
+            Variant={2}
+        />
     </VStack>
   )
 }

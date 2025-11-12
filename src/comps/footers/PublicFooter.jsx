@@ -1,5 +1,4 @@
 // src/components/Footer.jsx
-import React from "react";
 import {
   Box,
   Container,
@@ -17,7 +16,6 @@ import { Link as RouterLink } from "react-router-dom";
 import {
   FiPhone,
   FiMail,
-  FiMapPin,
   FiShield,
   FiAward,
   FiFileText,
@@ -69,40 +67,39 @@ export default function Footer() {
             </HStack>
           </VStack>
 
-          {/* 2. Quick Links */}
+          {/* Quick Links */}
           <VStack align="start" spacing={3}>
             <Text fontWeight="semibold" color="navbar_navlink_active" fontFamily={'mono'}>
               Quick Links
             </Text>
-            <Link as={RouterLink} to={ROOT} fontFamily={'mono'} color={'navbar_navlink'} _hover={{ color: "navbar_navlink_acticve" }}>
+            <Link as={RouterLink} to={ROOT} fontFamily={'mono'} color={'navbar_navlink'} _hover={{ color: "navbar_navlink_active" }}>
               Home
             </Link>
-            <Link as={RouterLink} to={SERVICES} fontFamily={'mono'} color={'navbar_navlink'} _hover={{ color: "navbar_navlink_acticve" }}>
+            <Link as={RouterLink} to={SERVICES} fontFamily={'mono'} color={'navbar_navlink'} _hover={{ color: "navbar_navlink_active" }}>
               Services
             </Link>
-            <Link as={RouterLink} to={CONTACT} fontFamily={'mono'} color={'navbar_navlink'} _hover={{ color: "navbar_navlink_acticve" }}>
+            <Link as={RouterLink} to={CONTACT} fontFamily={'mono'} color={'navbar_navlink'} _hover={{ color: "navbar_navlink_active" }}>
               Contact
             </Link>
           </VStack>
 
-          {/* 3. Contact Info */}
+          {/* Contact Info */}
           <VStack align="start" spacing={3}>
             <Text fontWeight="semibold" color="navbar_navlink_active">
               Contact Us
             </Text>
             <HStack>
               <Icon as={FiMail} color="navbar_navlink" />
-              <Link href={`mailto:${ContactData.Email}`} color="navbar_navlink">
+              <Link href={`mailto:${ContactData.Email}`} color="navbar_navlink" aria-label={`Email: ${ContactData.Email}`}>
                 {ContactData.Email}
               </Link>
             </HStack>
             <HStack>
               <Icon as={FiPhone} color="navbar_navlink" />
-              <Link href={`tel:${ContactData.Phone}`} color="navbar_navlink">
+              <Link href={`tel:${ContactData.Phone}`} color="navbar_navlink" aria-label={`Phone: ${ContactData.Phone}`}>
                 {ContactData.Phone}
               </Link>
             </HStack>
-            
           </VStack>
 
           {/* 4. Credentials */}

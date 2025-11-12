@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^3.28.1",
+    "@emailjs/browser": "^4.4.1",
     "@emotion/is-prop-valid": "^1.4.0",
     "@emotion/react": "^11.14.0",
     "@testing-library/dom": "^10.4.1",

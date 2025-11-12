@@ -180,9 +180,9 @@ const ServicesCarousel = () => {
                 >
                 {visible.map((svc, i) => (
                     <Box
-                    key={svc.Title + i}
-                    flex={`0 0 ${100 / cardsPerPage}%`}
-                    maxW={`${100 / cardsPerPage}%`}
+                      key={svc.Title + i}
+                      flex={`0 0 ${100 / cardsPerPage}%`}
+                      maxW={`${100 / cardsPerPage}%`}
                     >
                     <ServiceCard
                         title={svc.Title}

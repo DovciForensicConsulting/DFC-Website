@@ -1,4 +1,4 @@
-import { AspectRatio, Box, chakra, Heading, Image, Skeleton, Text, VStack } from '@chakra-ui/react';
+import { AspectRatio, Box, chakra, Image, Skeleton, VStack } from '@chakra-ui/react';
 import { isValidMotionProp, motion, useInView } from 'framer-motion';
 import shouldForwardProp from '@emotion/is-prop-valid';
 import React, { useRef, useState } from 'react';
@@ -14,7 +14,7 @@ const MotionHeading = chakra(motion.header, {
     isValidMotionProp(prop) || shouldForwardProp(prop),
 });
 
-const MotionText = chakra(motion.text, {
+const MotionText = chakra(motion.p, {
   shouldForwardProp: (prop) =>
     isValidMotionProp(prop) || shouldForwardProp(prop),
 });
@@ -35,6 +35,7 @@ const ServiceCard = ({ ServiceData }) => {
             }
         }}
         w="100%"
+        maxW={'500px'}
         bg="deep_gray"
         overflow="hidden"
         borderRadius="15px"

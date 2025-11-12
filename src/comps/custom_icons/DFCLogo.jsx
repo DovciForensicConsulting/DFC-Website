@@ -1,14 +1,16 @@
 import { Box } from '@chakra-ui/react'
-import React from 'react'
 
 const DFCLogo = (props) => {
   return (
     <Box
         id='dfc_logo'
         w={props.LogoWidth}
+        h='auto'
     >
         {props.Variant === 1 ?
         <svg 
+            aria-label="DFC Logo"
+            role="img"
             viewBox="0 0 110.89 39.63"
             xmlns="http://www.w3.org/2000/svg"
         >
@@ -22,10 +24,14 @@ const DFCLogo = (props) => {
         </svg>
         :
         <svg 
+            aria-label="DFC Logo"
+            role="img"
             viewBox="0 0 67.57 28.84"
             xmlns="http://www.w3.org/2000/svg"
             style={{
-                "filter": `drop-shadow(${props.DropShadow})` || 'drop-shadow(3px 3px 2px rgba(0, 0, 0, 1.0))',
+                filter: props.DropShadow 
+                    ? `drop-shadow(${props.DropShadow})` 
+                    : 'drop-shadow(3px 3px 2px rgba(0, 0, 0, 1))',
             }}
         >
             <g id="Layer_x0020_1">

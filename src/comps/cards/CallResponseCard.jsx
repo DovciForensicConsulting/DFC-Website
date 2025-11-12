@@ -1,6 +1,6 @@
-import { Box, chakra, HStack, Icon, SkeletonText, VStack } from "@chakra-ui/react";
+import { Box, chakra, HStack, Icon, VStack } from "@chakra-ui/react";
 import shouldForwardProp from "@emotion/is-prop-valid";
-import { isValidMotionProp, motion, useInView, Variants } from "framer-motion";
+import { isValidMotionProp, motion, useInView } from "framer-motion";
 import { GiPistolGun } from "react-icons/gi";
 
 import { useRef } from "react";
@@ -23,7 +23,7 @@ const CallResponseCard = ({
   ViewMargin = "-150px",
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: ViewMargin });
+  const isInView = useInView(ref, { once: false, margin: "-50px" });
 
   return (
     <MotionBox

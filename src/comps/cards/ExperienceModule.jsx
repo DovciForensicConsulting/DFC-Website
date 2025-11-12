@@ -1,10 +1,9 @@
-import { Box, Button, chakra, HStack, Icon, VStack } from '@chakra-ui/react'
+import { Box, chakra, HStack, VStack } from '@chakra-ui/react'
 import { useEffect, useRef, useState } from "react";
 import shouldForwardProp from "@emotion/is-prop-valid";
 import { isValidMotionProp, motion, useInView, AnimatePresence } from "framer-motion";
 import { useGesture } from '@use-gesture/react';
 import { Experience } from '../../data/HomeData';
-import { GiPistolGun } from 'react-icons/gi';
 import CTAButton from '../buttons/CTAButton';
 
 const MotionBox = chakra(motion.div, {
@@ -97,19 +96,20 @@ const ExperienceCarousel = ({ experienceData }) => {
 
   // Function to start/reset the auto-rotate timer
   const startAutoRotate = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
+    // clear previous interval
+    if (intervalRef.current) clearInterval(intervalRef.current);
 
+    // create a new interval
     intervalRef.current = setInterval(() => {
       setDirection(1);
-      setCurrentSlide((i) => (i + 1) % experienceData.length);
+      setCurrentSlide((prev) => (prev + 1) % experienceData.length);
     }, 4000);
   };
 
-  // Initial auto-rotate
+  // Start auto-rotate on mount
   useEffect(() => {
     startAutoRotate();
+
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
@@ -126,41 +126,34 @@ const ExperienceCarousel = ({ experienceData }) => {
         let newIndex = currentSlide;
 
         if (mx > 0) {
-          // Swipe right → previous
-          newDirection = -1;
+          newDirection = -1; // swipe right → previous
           newIndex = (currentSlide - 1 + experienceData.length) % experienceData.length;
         } else {
-          // Swipe left → next
-          newDirection = 1;
+          newDirection = 1; // swipe left → next
           newIndex = (currentSlide + 1) % experienceData.length;
         }
 
         setDirection(newDirection);
         setCurrentSlide(newIndex);
 
-        // Reset timer after swipe
+        // RESET the auto-rotate timer after swipe
         startAutoRotate();
       },
     },
     {
-      drag: {
-        filterTaps: true,
-        axis: 'x',
-        threshold: 10,
-      },
+      drag: { filterTaps: true, axis: 'x', threshold: 10 },
     }
   );
 
-  // Handle dot click – also resets timer
+  // Dot click – also resets timer
   const handleDotClick = (idx) => {
     setDirection(idx > currentSlide ? 1 : -1);
     setCurrentSlide(idx);
-    startAutoRotate(); // Reset timer
+    startAutoRotate();
   };
 
   return (
     <VStack spacing={4} align="center" w="100%" maxW="800px" mx="auto">
-      {/* Swipe container */}
       <MotionBox
         minH="175px"
         w="100%"
@@ -183,7 +176,6 @@ const ExperienceCarousel = ({ experienceData }) => {
         </AnimatePresence>
       </MotionBox>
 
-      {/* Dots */}
       <HStack justify="center" spacing={2}>
         {experienceData.map((_, idx) => (
           <Box
@@ -206,27 +198,30 @@ const ExperienceModule = () => {
   return (
     <MotionBox
       initial={[{ skewY: -4 }, { skewY: -2 }]}
-      mt={['15px', "50px"]}
-      zIndex={0}
       bg="{colors.soft_wheat}"
-      pb="50px"
-      h={'420px'}
       w="100%"
-      pl={['5px' ,'50px']}
-      pr={['5px' ,'50px']}
-      pt={['30px', '40px', '45px', '30px', '0px']}
-      style={{
-        transformOrigin: 'top left',
-        filter: 'drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5))',
-      }}
     >
+      <MotionBox
+        w='100%'
+        h='5px'
+        bg={'soft_wheat'}
+        style={{
+          filter: 'drop-shadow(-2px -2px 4px rgba(0, 0, 0, 0.5))',
+        }}
+      />
+      
       <MotionBox
         initial={[{ skewY: 4 }, { skewY: 2 }]}
         w="100%"
-        style={{ transformOrigin: 'top left' }}
         textAlign="center"
       >
-        <VStack spacing={8} align="center">
+        <VStack
+          spacing={8}
+          align="center"
+          pl={['5px' ,'50px']}
+          pr={['5px' ,'50px']}
+          pt={'50px'}
+        >
           <MotionHeading
             fontFamily="heading"
             fontSize={['5xl', '6xl']}
@@ -243,6 +238,7 @@ const ExperienceModule = () => {
           <ExperienceCarousel experienceData={Experience.Experiences} />
           <Box
             pt='15px'
+            pb={'50px'}
           >
             <CTAButton
                 Title={"Contact Us"}
@@ -253,6 +249,16 @@ const ExperienceModule = () => {
           
         </VStack>
       </MotionBox>
+      
+      <MotionBox
+        w='100%'
+        h='5px'
+        bg={'soft_wheat'}
+        zIndex={0}
+        style={{
+          filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))',
+        }}
+      />
     </MotionBox>
   );
 };

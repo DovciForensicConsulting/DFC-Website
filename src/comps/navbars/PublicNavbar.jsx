@@ -8,28 +8,30 @@ import DFCLogo from '../custom_icons/DFCLogo';
 
 const NavIcon = () => {
   return (
-    <Link
-        as={NavLink}
-        to={"/"}
-    >
+    <Link as={RouterLink} to="/" aria-label="Home">
         <Box
-            h='50px'
-            w='90px'
-            //bg={'navbar_icon'}
-            cursor={'pointer'}
-            alignContent={'center'}
+            h="50px"
+            w="90px"
+            display={'flex'}
+            alignItems={'center'}
+            justifyContent={'center'}
         >
-            <DFCLogo
-                logoWith={'100%'}
-                LogoColor_1={"#A39274"}
-                LogoColor_2={"#DFD8C8"}
+            <Box
+                w='100%'
+                cursor="pointer"
+            >
+                <DFCLogo
+                logoWith="100%"
+                LogoColor_1="#A39274"
+                LogoColor_2="#DFD8C8"
                 Variant={1}
-            />
-        </Box>
+                />
+            </Box>
+        </Box>      
     </Link>
-    
-  )
+  );
 };
+
 
 {/*const NavTitle = () => {
     return (
@@ -51,41 +53,37 @@ const NavIcon = () => {
     )
 };*/}
 
-const NavButton = (props) => {
-    const { buttonData, id } = props;
-    const location = useLocation();
-    const isActive = location.pathname === buttonData.Link;
+const NavButton = ({ buttonData, id }) => {
+  const location = useLocation();
+  const isActive = location.pathname === buttonData.Link;
+
   return (
     <Link
-        as={RouterLink}
-        to={buttonData.Link}
-        display={['none', 'none', 'flex']}
+      as={RouterLink}
+      to={buttonData.Link}
+      display={['none', 'none', 'flex']}
+      key={id} // move key here, not on Box
+      _hover={{ textDecoration: 'none' }}
     >
-        <Box
-            id={id}
-            cursor={'pointer'}
-            display={'flex'}
-            h='100%'
-            w='100%'
-            borderBottom={isActive ? 'solid' : 'none'}
-            borderBottomColor={'navbar_navlink_active'}
-            borderBottomWidth={'thin'}
-            _hover={{
-                "borderBottom": "solid",
-                "borderBottomColor": "navbar_navlink_active",
-                "borderBottomWidth": "thin"
-            }}
-        >
+      <Box
+        cursor={'pointer'}
+        display={'flex'}
+        h='100%'
+        w='100%'
+        borderBottom={isActive ? 'solid' : 'none'}
+        borderBottomColor={'navbar_navlink_active'}
+        borderBottomWidth={'thin'}
+        justifyContent="center"
+        alignItems="center"
+      >
         <Text
-            color={isActive ? "navbar_navlink_active" : 'navbar_navlink'}
-            _hover={{
-                "color": "navbar_navlink_active"
-            }}
+          color={isActive ? 'navbar_navlink_active' : 'navbar_navlink'}
+          _hover={{ color: 'navbar_navlink_active' }}
         >
-            {buttonData.Title}
+          {buttonData.Title}
         </Text>
-        </Box>
-    </Link>    
+      </Box>
+    </Link>
   );
 };
 
@@ -141,47 +139,41 @@ const MobileMenuCloseButton = (props) => {
     )
 }
 
-const MobileNavButton = (props) => {
-    const { buttonData, id, onClick } = props;
-    const location = useLocation();
-    const isActive = location.pathname === buttonData.Link;
+const MobileNavButton = ({ buttonData, id, onClick }) => {
+  const location = useLocation();
+  const isActive = location.pathname === buttonData.Link;
+
   return (
     <Link
-        as={RouterLink}
-        to={buttonData.Link}
-        display={'flex'}
-        h='25px'
+      as={RouterLink}
+      to={buttonData.Link}
+      display={'flex'}
+      key={id} // key here
+      _hover={{ textDecoration: 'none' }}
+      onClick={onClick}
     >
-        <Box
-            id={id}
-            cursor={'pointer'}
-            display={'flex'}
-            justifyContent={'center'}
-            h='100%'
-            w='100%'
-            borderBottom={isActive ? 'solid' : 'none'}
-            borderBottomColor={'navbar_navlink_active'}
-            borderBottomWidth={'thin'}
-            onClick={onClick}
-            _hover={{
-                "borderBottom": "solid",
-                "borderBottomColor": "navbar_navlink_active",
-                "borderBottomWidth": "thin"
-            }}
-        >
+      <Box
+        cursor={'pointer'}
+        display={'flex'}
+        justifyContent={'center'}
+        h='100%'
+        w='100%'
+        borderBottom={isActive ? 'solid' : 'none'}
+        borderBottomColor={'navbar_navlink_active'}
+        borderBottomWidth={'thin'}
+      >
         <Text
-            color={isActive ? "navbar_navlink_active" : 'navbar_navlink'}
-            fontSize={'lg'}
-            _hover={{
-                "color": "navbar_navlink_active"
-            }}
+          color={isActive ? 'navbar_navlink_active' : 'navbar_navlink'}
+          fontSize={'lg'}
+          _hover={{ color: 'navbar_navlink_active' }}
         >
-            {buttonData.Title}
+          {buttonData.Title}
         </Text>
-        </Box>
-    </Link>    
+      </Box>
+    </Link>
   );
 };
+
 
 const MobileMenu = () => {
     const [open, setOpen] = useState(false)
@@ -261,6 +253,7 @@ const MobileMenu = () => {
 export const PublicNavbar = () => {
   return (
     <Box
+        aria-label='Main website navigation'
         display="flex"
         alignItems="center"
         justifyContent={'space-between'}
@@ -288,6 +281,7 @@ export const PublicNavbar = () => {
         >
             {navbarData.Buttons.map((buttonData, idx) => (
                 <NavButton
+                    key={idx}
                     id={idx}
                     buttonData={buttonData}
                 />

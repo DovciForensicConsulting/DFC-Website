@@ -1,4 +1,4 @@
-import { AspectRatio, Box, Button, chakra, Heading, HStack, Icon, Image, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Box, chakra, Heading, HStack, Icon, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import shouldForwardProp from "@emotion/is-prop-valid";
 import { isValidMotionProp, motion, useInView } from "framer-motion";
 import { DoForYou } from "../../data/HomeData";
@@ -19,7 +19,7 @@ const MotionText = chakra(motion.p, {
 
 const WeDoCard = ({weDoData, ViewMargin}) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, margin: ViewMargin })
+    const isInView = useInView(ref, { once: false, margin: "-50px" })
     return(
         <MotionBox
             ref={ref}
@@ -128,9 +128,7 @@ const WhatWeDoCard = (props) => {
             w='100%'
             h='5px'
             bg={'deep_gray'}
-            style={{
-                filter: 'drop-shadow(-3px -3px 2px rgba(0, 0, 0, 1.0))'
-            }}
+            
         />  
         <MotionBox
             w='100%'
@@ -177,6 +175,7 @@ const WhatWeDoCard = (props) => {
                     {DoForYou.WeDos.map((weDoData, weDoIdx) => {
                         return(
                             <WeDoCard
+                                key={weDoIdx}
                                 weDoData={weDoData}
                                 ViewMargin={'-150px'}
                             />

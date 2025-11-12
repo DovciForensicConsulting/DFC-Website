@@ -37,7 +37,7 @@ const PublicLayout = () => {
         <Box 
             bg={'pub_layout_bg'}
             position={'relative'}
-            //top={'50px'}
+            pt={'60px'}
         >
             <ScrollToTop/>
             <Outlet />

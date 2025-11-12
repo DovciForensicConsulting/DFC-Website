@@ -1,5 +1,4 @@
-import { AspectRatio, Box, Heading, Icon, Link, Text, VStack } from '@chakra-ui/react'
-import React from 'react'
+import { AspectRatio, Box, Heading, Link, Text, VStack } from '@chakra-ui/react'
 import { VideoHeroBanner } from '../../data/HomeData';
 import { NavLink } from 'react-router-dom';
 import CTAButton from '../buttons/CTAButton';
