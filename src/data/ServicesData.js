@@ -47,6 +47,7 @@ export const ServicesData = {
         "https://ik.imagekit.io/jddev541/DFC_Images/DSCF3566.jpg?updatedAt=1763051090829",
         "https://ik.imagekit.io/jddev541/DFC_Images/Calculation%20of%20Impacr%20Angle.jpg",
         "https://ik.imagekit.io/jddev541/DFC_Images/20251113_155010.jpg",
+        "https://ik.imagekit.io/jddev541/DFC_Images/6Aa3c%20Blood%20drop%20falling%2050%20cm%20(3rd%20of%20three%20drops).jpg",
         "https://ik.imagekit.io/jddev541/DFC_Images/20251113_155203.jpg",
         "https://ik.imagekit.io/jddev541/DFC_Images/20251113_155348.jpg"
       ]
@@ -69,7 +70,9 @@ export const ServicesData = {
         "https://ik.imagekit.io/jddev541/DFC_Images/Midsagittal%20Cross%20Section%20w-Trajectory.jpg?updatedAt=1763051005877",
         "https://ik.imagekit.io/jddev541/DFC_Images/Hoffman%20Wound%20Trajectories%20-%20Front%20-%20labelled.jpg?updatedAt=1763061016110",
         "https://ik.imagekit.io/jddev541/DFC_Images/DSCN0640.JPG",
-        "https://ik.imagekit.io/jddev541/DFC_Images/Trajectory%20in%20Skeleton.jpg"
+        "https://ik.imagekit.io/jddev541/DFC_Images/Trajectory%20in%20Skeleton.jpg",
+        "https://ik.imagekit.io/jddev541/DFC_Images/R%20Lateral%20View%20-%20Trajectories%20with%20Placards.jpg",
+        "https://ik.imagekit.io/jddev541/DFC_Images/Corrected%20Trajectories%20in%20Body%20Captures%20from%20Poser.jpg"
       ]
       // Picture of transparent body
     },
@@ -90,7 +93,9 @@ export const ServicesData = {
       Description: "Advanced police agencies are using laser scanning systems to document crime scenes. However, the data collected is in digital form and needs to be converted to a 3 dimensional model. We convert the data to usable 3d diagrams.",
       Images: [
         "https://images.ctfassets.net/go54bjdzbrgi/6JNAyLiZlik3VuhLwdzW7E/2e3e8e424f54d5f234e34f14faa9b866/HEA_BLOG_GEO_pix4dmapper-forensic-reconstruction.jpg",
-        "https://images.ctfassets.net/go54bjdzbrgi/5BbiLBguPdHyNYveesLXI0/ab559823ceca36616ad78ecda6daa8a5/IMA_BLOG_Collision_reconstruction_merge_1.jpg"
+        "https://images.ctfassets.net/go54bjdzbrgi/5BbiLBguPdHyNYveesLXI0/ab559823ceca36616ad78ecda6daa8a5/IMA_BLOG_Collision_reconstruction_merge_1.jpg",
+        "https://ik.imagekit.io/jddev541/DFC_Images/Geosystem%20Scan.jpg",
+        "https://ik.imagekit.io/jddev541/DFC_Images/image.png"
       ]
       //Use you picture from Pendleton smoke shop
     },
