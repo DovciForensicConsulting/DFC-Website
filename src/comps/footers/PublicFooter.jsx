@@ -23,6 +23,7 @@ import {
 import { ROOT, SERVICES, CONTACT } from "../../lib/Routes";
 import { ContactData } from "../../data/ContactData";
 import { IoDocumentText } from "react-icons/io5";
+import { GiInjustice } from "react-icons/gi";
 
 
 
@@ -108,7 +109,7 @@ export default function Footer() {
               <Text>25+ Years Forensic Lab Experience</Text>
             </HStack>
             <HStack>
-              <Icon as={FiFileText} color="navbar_navlink" />
+              <Icon as={GiInjustice} color="navbar_navlink" />
               <Text>Court-Qualified Expert Witness</Text>
             </HStack>
             <HStack>
