@@ -58,7 +58,7 @@ const ServiceCard = ({ ServiceData }) => {
                 flexDirection={'column'}
                 justifyContent={'start'}
                 alignItems={'center'}
-                minH='220px'
+                minH='300px'
             >
                 {/* Title */}
                 <MotionHeading

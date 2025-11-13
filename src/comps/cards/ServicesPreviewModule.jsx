@@ -70,7 +70,7 @@ const ServiceCard = ({ title, imageSrc, isActive, direction }) => {
               color={'soft_wheat'}
               fontWeight={'normal'}
               textAlign={'center'}
-              fontSize={'3xl'}
+              fontSize={'2xl'}
               style={{
                   filter: 'drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))',
               }}
@@ -129,18 +129,14 @@ const ServicesCarousel = () => {
 
   /* ---------- auto-rotate with reset ---------- */
   const intervalRef = useRef(null);
-
   const startTimer = () => {
-    // clear any running timer
     if (intervalRef.current) clearInterval(intervalRef.current);
-
     intervalRef.current = setInterval(() => {
       setDirection(1);
       setCurrentPage((p) => (p + 1) % totalPages);
     }, 6000);
   };
 
-  // start once on mount
   useEffect(() => {
     startTimer();
     return () => clearInterval(intervalRef.current);
@@ -152,71 +148,73 @@ const ServicesCarousel = () => {
       onDragEnd: ({ movement: [mx] }) => {
         const THRESHOLD = 50;
         if (Math.abs(mx) < THRESHOLD) return;
-
         if (mx > 0) {
-          // swipe right → previous page
           setDirection(-1);
           setCurrentPage((p) => (p - 1 + totalPages) % totalPages);
         } else {
-          // swipe left → next page
           setDirection(1);
           setCurrentPage((p) => (p + 1) % totalPages);
         }
-
-        // RESET TIMER AFTER SWIPE
         startTimer();
       },
     },
     { drag: { filterTaps: true, axis: 'x', threshold: 10 } }
   );
 
-  /* ---------- visible cards for the current page ---------- */
-  const start = currentPage * cardsPerPage;
-  const visible = ServicesData.Services.slice(start, start + cardsPerPage);
+  /* ---------- ALWAYS FULL PAGE (duplicate items if needed) ---------- */
+  const startIdx = currentPage * cardsPerPage;
+  const rawSlice = ServicesData.Services.slice(startIdx, startIdx + cardsPerPage);
+  const visible = [...rawSlice];
+
+  // fill the rest with items from the beginning (loop)
+  while (visible.length < cardsPerPage) {
+    const nextIdx = visible.length % ServicesData.Services.length;
+    visible.push(ServicesData.Services[nextIdx]);
+  }
 
   return (
-    <VStack spacing={6} w="full" maxW='1250px' mb={'-15px'}>
-    {/* ---- swipe container with padding INSIDE ---- */}
-        <MotionBox
-            position="relative"
-            overflow="hidden"
+    <VStack spacing={6} w="full" maxW="1250px" mb="-15px">
+      {/* ---- swipe container with padding INSIDE ---- */}
+      <MotionBox
+        position="relative"
+        overflow="hidden"
+        w="full"
+        minH={{ base: '260px', md: '340px' }}
+        pl={['20px', '50px']}
+        pr={['20px', '50px']}
+        {...bind()}
+        cursor="grab"
+        _active={{ cursor: 'grabbing' }}
+        touchAction="none"
+      >
+        <AnimatePresence initial={false} custom={direction} mode="wait">
+          <HStack
+            key={currentPage}
+            spacing={5}
             w="full"
-            minH={{ base: '260px', md: '340px' }}
-            pl={['20px', '50px']}
-            pr={['20px', '50px']}
-            {...bind()}
-            cursor="grab"
-            _active={{ cursor: 'grabbing' }}
-            touchAction="none"   // ← THIS IS THE MISSING LINE
-            >
-            <AnimatePresence initial={false} custom={direction} mode="wait">
-                <HStack
-                    key={currentPage}
-                    spacing={5}
-                    w="full"
-                    justify={cardsPerPage === 1 ? 'center' : 'flex-start'}
-                    align="stretch"
-                >
-                {visible.map((svc, i) => (
-                    <Box
-                      key={svc.Title + i}
-                      flex={`0 0 ${100 / cardsPerPage}%`}
-                      maxW={`${100 / cardsPerPage}%`}
-                    >
-                    <ServiceCard
-                        title={svc.Title}
-                        imageSrc={svc.Images[0]}
-                        isActive={true}
-                        direction={direction}
-                    />
-                    </Box>
-                ))}
-                </HStack>
-            </AnimatePresence>
-            </MotionBox>
+            justify={cardsPerPage === 1 ? 'center' : 'flex-start'}
+            align="stretch"
+          >
+            {visible.map((svc, i) => (
+              <Box
+                key={`${svc.Title}-${currentPage}-${i}`} // unique key even for duplicates
+                flex={`0 0 ${100 / cardsPerPage}%`}
+                maxW={`${100 / cardsPerPage}%`}
+              >
+                <ServiceCard
+                  title={svc.Title}
+                  imageSrc={svc.Images[0]}
+                  isActive={true}
+                  direction={direction}
+                />
+              </Box>
+            ))}
+          </HStack>
+        </AnimatePresence>
+      </MotionBox>
 
       {/* ---- dots (one per page) – reset timer on click ---- */}
-      <HStack justify="center" gap={2} mt={'20px'} mb={'10px'}>
+      <HStack justify="center" gap={2} mt="20px" mb="10px">
         {Array.from({ length: totalPages }, (_, idx) => (
           <Box
             key={idx}
@@ -229,18 +227,13 @@ const ServicesCarousel = () => {
             onClick={() => {
               setDirection(idx > currentPage ? 1 : -1);
               setCurrentPage(idx);
-              // RESET TIMER AFTER DOT CLICK
               startTimer();
             }}
           />
         ))}
       </HStack>
 
-      <CTAButton
-        Title={"View Services"}
-        toLink={"/services"}
-        Variant={0}
-      />
+      <CTAButton Title="View Services" toLink="/services" Variant={0} />
     </VStack>
   );
 };
