@@ -58,40 +58,59 @@ const ServiceCard = ({ title, imageSrc, isActive, direction }) => {
         style={{
             filter: 'drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5))',
         }}
-        borderRadius="md"
+        borderRadius="25px"
         overflow="hidden"
         boxShadow="md"
         bg="golden_wheat"
     >
-        <Skeleton
-            loading={imageLoading}
-        >
-            <Image
-                borderRadius={'15px'}
-                src={imageSrc}
-                alt={title}
-                objectFit="cover"
-                w="full"
-                h={{ base: '140px', md: '180px' }}
-                p={'10px'}
-                onLoad={() => setImageLoading(false)}
-            />
-        </Skeleton>
+        
       
-      <Box p={3} bg="golden_wheat">        
-        <Heading
-            color={'soft_wheat'}
-            fontWeight={'normal'}
-            textAlign={'center'}
-            fontSize={'3xl'}
+        <Box pt={'15px'} bg="golden_wheat" display={'flex'} alignItems={'center'} justifyContent={'center'}>        
+          <Heading
+              color={'soft_wheat'}
+              fontWeight={'normal'}
+              textAlign={'center'}
+              fontSize={'3xl'}
+              style={{
+                  filter: 'drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))',
+              }}
+          >
+              {title}
+          </Heading>        
+        </Box>
+
+        <Skeleton loading={imageLoading} borderRadius="15px" display={'flex'} alignItems={'center'} justifyContent={'center'}>
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            w="full"
+            h={['250px', '300px']}
+            overflow={'hidden'}
+            bg={'deep_gray'}
+            m='15px'
+            borderRadius={'15px'}
             style={{
                 filter: 'drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))',
             }}
-            onLoad={() => setHeadingLoading(false)}
-        >
-            {title}
-        </Heading>        
-      </Box>
+          >
+            <Image
+              src={imageSrc}
+              alt={title}
+              borderRadius={'15px'}
+              objectFit="cover"
+              maxW="100%"
+              maxH="100%"
+              h="auto"
+              w="auto"
+              p={'15px'}
+              style={{
+                filter: 'drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))',
+              }}
+              onLoad={() => setImageLoading(false)}
+            />
+          </Box>
+      </Skeleton>
     </MotionBox>
   );
 };
@@ -186,7 +205,7 @@ const ServicesCarousel = () => {
                     >
                     <ServiceCard
                         title={svc.Title}
-                        imageSrc={svc.ImageSrc}
+                        imageSrc={svc.Images[0]}
                         isActive={true}
                         direction={direction}
                     />
@@ -197,7 +216,7 @@ const ServicesCarousel = () => {
             </MotionBox>
 
       {/* ---- dots (one per page) – reset timer on click ---- */}
-      <HStack justify="center" gap={2} mt={['-50px', '-90px']} mb={'10px'}>
+      <HStack justify="center" gap={2} mt={'20px'} mb={'10px'}>
         {Array.from({ length: totalPages }, (_, idx) => (
           <Box
             key={idx}

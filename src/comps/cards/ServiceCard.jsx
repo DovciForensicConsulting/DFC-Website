@@ -3,6 +3,7 @@ import { isValidMotionProp, motion, useInView } from 'framer-motion';
 import shouldForwardProp from '@emotion/is-prop-valid';
 import React, { useRef, useState } from 'react';
 import CTAButton from '../buttons/CTAButton';
+import ImageSlideshow from '../banners/ImageSlideshow';
 
 const MotionBox = chakra(motion.div, {
   shouldForwardProp: (prop) =>
@@ -45,50 +46,9 @@ const ServiceCard = ({ ServiceData }) => {
             gap={2}
             align="center"
         >
-            <Skeleton
-                loading={imageLoading}
-                w="100%"
-                h="100%"
-            >
-                {/* Image Container – Centered */}
-                <MotionBox
-                    h="300px"
-                    w="100%"
-                    mx="auto" // ← Horizontally center this box
-                    borderRadius="10px 10px 5px 5px"
-                    overflow="hidden"
-                    position="relative"
-                    initial={{opacity: 0, scale: 0}}
-                    variants={{
-                        visible: {
-                            opacity: 1,
-                            scale: 1,
-                            transition: {delay: 0.05, duration: 0.5, ease: 'easeInOut'}
-                        }
-                    }}
-                >                
-                    <AspectRatio
-                        ratio={1}
-                        w="100%"
-                        h="100%"
-                    >
-                        <Image
-                            src={ServiceData.ImageSrc}
-                            alt={ServiceData.Title}
-                            objectFit="scale-down"
-                            onLoad={() => setImageLoading(false)}
-                            onError={() => setImageLoading(false)} // prevent stuck loading
-                            // These ensure true centering inside AspectRatio
-                            position="absolute"
-                            top={0}
-                            left={0}
-                            w="100%"
-                            h="100%"
-                        />
-                    </AspectRatio>
-                    
-                </MotionBox>
-            </Skeleton>
+            <ImageSlideshow
+                images={ServiceData.Images}
+            />
             {/* Description */}
             <Box
                 bg={'soft_wheat'}
@@ -96,8 +56,9 @@ const ServiceCard = ({ ServiceData }) => {
                 p={'10px 10px 25px 10px'}
                 display={'flex'}
                 flexDirection={'column'}
-                justifyContent={'center'}
+                justifyContent={'start'}
                 alignItems={'center'}
+                minH='220px'
             >
                 {/* Title */}
                 <MotionHeading
@@ -112,7 +73,7 @@ const ServiceCard = ({ ServiceData }) => {
                     fontSize={['4xl', '5xl']}
                     color="deep_gray"
                     fontWeight="normal"
-                    lineHeight="35px"
+                    lineHeight="40px"
                     px={{ base: '20px', md: '50px' }}
                     textAlign="center"
                     pt="15px"
