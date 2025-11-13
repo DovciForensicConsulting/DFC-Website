@@ -23,11 +23,11 @@ export const WhyChooseUs = {
       Text: "Our service is backed by nearly 40 years of acquired experience gained from casework in an accredited forensic laboratory, investigating hundreds of crime scenes, attending hundreds of autopsies, and consulting on many criminal cases"
     },
     {
-      Title: "Expertise",
-      Text: "Our expertise results not only from experience, but from diverse and in depth training. Our training providers include college institutions, a basic police academy, institutional training and in-service schools, external forensic courses and seminars and personal technical pursuits"
+      Title: "Knowledge",
+      Text: "Our expertise results not only from experience, but from diverse and in depth training. Our training was recieved from college institutions, a basic police academy, institutional training and in-service schools, external forensic courses and seminars and personal technical pursuits"
     },
     {
-      Title: "Essential",
+      Title: "Competence",
       Text: "The service we offer is essential to your success. No attorney wants to provide ineffectual counsel. Our firm provides critical insights and opinions resulting from years of expert analysis and service to both prosecutors and defense attorneys. Partnering with DFC will allow you to have the confidence that stems from real knowledge and facts which allows you to provide the best defense for your client"
     }
   ],
@@ -37,7 +37,7 @@ export const WhyChooseUs = {
 
 export const DoForYou = {
   Title: "What can we do for you?",
-  Text: "If you are like most criminal defense attorneys, you start a case with a massive discovery file. You screen it well enough to decide that you need help to put the case in perspective. That’s where we come in. You know enough about our firm to know that we have the experience and knowledge to help you do just that. Here is what we can do for you.",
+  Text: "If you are like most criminal defense attorneys, you start a case with a massive discovery file. You screen it well enough to decide that you need help to put the case in perspective. That’s where we come in. We have the experience and knowledge to help you do just that. Here is what we can do for you.",
   WeDos: [
     {
       Title: "Review",
@@ -46,12 +46,12 @@ export const DoForYou = {
     },
     {
       Title: "Explain",
-      Text: "We will tell you in understandable terms what investigators, forensic scientists and pathologists are saying in their reports",
+      Text: "We will tell you in understandable terms what investigators, forensic scientists and pathologists are saying in their reports.",
       Icon: RiSpeakFill
     },
     {
       Title: "Evaluate",
-      Text: "We evaluate the forensic processes utilized by police agencies to investigate crime scenes and determine additional areas of meaningful investigation.",
+      Text: "We evaluate the forensic processes utilized by police agencies to investigate crime scenes and determine areas requiring further investigation.",
       Icon: HiDocumentMagnifyingGlass
     },
     {
@@ -71,7 +71,7 @@ export const DoForYou = {
     },
     {
       Title: "Write",
-      Text: "We write analytical reports documenting forensic analytical findings and how they were obtained",
+      Text: "We write analytical reports documenting forensic analytical findings and how they were obtained.",
       Icon: TfiWrite
     },
     {
@@ -87,36 +87,6 @@ export const DoForYou = {
   ]
 }
 
-export const OurDifference = {
-  Title: "State-of-the-Art Forensic Technologies",
-  Text: "Harnessing 3D scanning, virtual microscopy, artificial intelligence and dynamic visualizations for precise, court-admissible results.",
-  Media: [
-    {
-      Type: "Image",
-      Source: "https://images.pexels.com/photos/256262/pexels-photo-256262.jpeg",
-      ThumbnailSource: "https://images.pexels.com/photos/256262/pexels-photo-256262.jpeg?auto=compress&cs=tinysrgb&w=600",
-      Caption: "Firearms Microscopy & Toolmark Analysis",
-      CTATitle: "View Services",
-      CTALink: "/services",
-    },
-    {
-      Type: "Image",
-      Source: "https://images.pexels.com/photos/6615068/pexels-photo-6615068.jpeg",
-      ThumbnailSource: "https://images.pexels.com/photos/6615068/pexels-photo-6615068.jpeg?auto=compress&cs=tinysrgb&w=600",
-      Caption: "3D Crime Scene Reconstruction",
-      CTATitle: "View Services",
-      CTALink: "/services",
-    },
-    {
-      Type: "Image",
-      Source: "https://images.pexels.com/photos/17630959/pexels-photo-17630959.jpeg",
-      ThumbnailSource: "https://images.pexels.com/photos/17630959/pexels-photo-17630959.jpeg?auto=compress&cs=tinysrgb&w=600",
-      Caption: "Courtroom Animations & Exhibits",
-      CTATitle: "View Services",
-      CTALink: "/services",
-    },
-  ],
-};
 
 export const Experience = {
   Title: "Experience You Can Trust",

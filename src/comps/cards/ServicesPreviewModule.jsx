@@ -137,7 +137,7 @@ const ServicesCarousel = () => {
     intervalRef.current = setInterval(() => {
       setDirection(1);
       setCurrentPage((p) => (p + 1) % totalPages);
-    }, 4000);
+    }, 6000);
   };
 
   // start once on mount

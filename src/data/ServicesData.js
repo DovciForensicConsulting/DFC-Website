@@ -7,7 +7,7 @@ export const ServicesData = {
   Title: "Expert Solutions",
   Services: [
     {
-      Title: "Firearms and Toolmark Testing",
+      Title: "Firearms and Toolmark Comparisons",
       Description: "Identification of caliber, general rifling characteristics (GRC), bullet manufacturer identification, list of possible firearms based on GRC, microscopic comparison of bullets from a known firearm to bullets collected as evidence, comparison of tools to evidence markings, function testing of firearms, examination of firearms for alteration and defects, evaluation semi-automatic versus fully automatic actions",
       Images: [
         "https://ik.imagekit.io/jddev541/DFC_Images/DSCN7532.JPG",
