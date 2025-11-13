@@ -29,6 +29,10 @@ export const WhyChooseUs = {
     {
       Title: "Competence",
       Text: "The service we offer is essential to your success. No attorney wants to provide ineffectual counsel. Our firm provides critical insights and opinions resulting from years of expert analysis and service to both prosecutors and defense attorneys. Partnering with DFC will allow you to have the confidence that stems from real knowledge and facts which allows you to provide the best defense for your client"
+    },
+    {
+      Title: "Flexible",
+      Text: "Our expert will work with indigent defense funding from state or court public defender agencies. We also collaborate with contracted defense and civil attorneys."
     }
   ],
   CTA_Title: "Contact Us",
