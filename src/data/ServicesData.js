@@ -47,7 +47,8 @@ export const ServicesData = {
         "https://ik.imagekit.io/jddev541/DFC_Images/DSCF3566.jpg?updatedAt=1763051090829",
         "https://ik.imagekit.io/jddev541/DFC_Images/Calculation%20of%20Impacr%20Angle.jpg",
         "https://ik.imagekit.io/jddev541/DFC_Images/20251113_155010.jpg",
-        "https://ik.imagekit.io/jddev541/DFC_Images/20251113_155203.jpg"
+        "https://ik.imagekit.io/jddev541/DFC_Images/20251113_155203.jpg",
+        "https://ik.imagekit.io/jddev541/DFC_Images/20251113_155348.jpg"
       ]
       // Picture of Blood Pattern
     },
