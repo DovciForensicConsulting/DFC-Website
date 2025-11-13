@@ -95,7 +95,8 @@ export const ServicesData = {
         "https://images.ctfassets.net/go54bjdzbrgi/6JNAyLiZlik3VuhLwdzW7E/2e3e8e424f54d5f234e34f14faa9b866/HEA_BLOG_GEO_pix4dmapper-forensic-reconstruction.jpg",
         "https://images.ctfassets.net/go54bjdzbrgi/5BbiLBguPdHyNYveesLXI0/ab559823ceca36616ad78ecda6daa8a5/IMA_BLOG_Collision_reconstruction_merge_1.jpg",
         "https://ik.imagekit.io/jddev541/DFC_Images/Geosystem%20Scan.jpg",
-        "https://ik.imagekit.io/jddev541/DFC_Images/image.png"
+        "https://ik.imagekit.io/jddev541/DFC_Images/image.png",
+        "https://ik.imagekit.io/jddev541/DFC_Images/Leica%20Scan%20of%20RoomUntitled-6.jpg"
       ]
       //Use you picture from Pendleton smoke shop
     },
