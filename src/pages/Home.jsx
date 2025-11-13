@@ -23,11 +23,18 @@ const Home = () => {
                 position={'absolute'}
                 zIndex={5}
             />
-            <ServicesPreviewModule/>
+            <Box
+                w='100%'
+                minH={'500px'}
+            >
+                <ServicesPreviewModule/>
+            </Box>
+            
             <VStack
                 mt='30px'
                 gap={5}
                 pb={'50px'}
+                minH={'500px'}
             >
                 <Heading
                     fontWeight={'normal'}

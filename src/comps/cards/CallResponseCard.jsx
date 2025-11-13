@@ -29,7 +29,6 @@ const CallResponseCard = ({
     <MotionBox
       ref={ref}
       animate={isInView ? "visible" : "hidden"}
-      transition={{ delay: 0}}
       bg="{colors.soft_wheat}"
       borderRadius="15px"
       overflow="hidden"

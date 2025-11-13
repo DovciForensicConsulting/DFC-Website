@@ -220,6 +220,7 @@ const ServicesCarousel = () => {
       <CTAButton
         Title={"View Services"}
         toLink={"/services"}
+        Variant={0}
       />
     </VStack>
   );

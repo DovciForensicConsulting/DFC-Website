@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom'
 import shouldForwardProp from '@emotion/is-prop-valid';
 
 
-const MotionBox = chakra(motion.div, {
+const MotionNavLink = chakra(motion(NavLink), {
   shouldForwardProp: (prop) =>
     isValidMotionProp(prop) || shouldForwardProp(prop),
-});
+})
 
 const CTAButton = ({ Title, toLink, Variant = 0 }) => {
   // Define styles based on Variant
@@ -44,10 +44,9 @@ const CTAButton = ({ Title, toLink, Variant = 0 }) => {
   const style = variants[Variant] || variants[0]; // fallback to 0
 
   return (
-    <MotionBox
-      as={NavLink}
+    <MotionNavLink
       to={toLink}
-      minH={'40px'}
+      minH="40px"
       bg={style.bg}
       color={style.text_color}
       display="flex"
@@ -55,23 +54,23 @@ const CTAButton = ({ Title, toLink, Variant = 0 }) => {
       justifyContent="center"
       p="5px 50px"
       borderRadius="15px"
-      border={style.enable_border ? '2px solid' : '0px'} 
+      border={style.enable_border ? '2px solid' : '0px'}
       borderColor={style.border_hoverColor}
       cursor="pointer"
       zIndex={10}
       initial={{ scale: 1 }}
+      whileHover={{ scale: 1.1 }}
+      transition={{ duration: 0.25, ease: 'easeInOut' }}
       _hover={{
-        scale: 1.1,
         bg: style.bg_hover,
         color: style.text_hoverColor,
         border: '2px solid',
         borderColor: style.border_hoverColor,
         textDecoration: 'none',
       }}
-      transition={{ duration: 0.5, ease: 'easeInOut' }}
     >
       <Text fontFamily="body">{Title}</Text>
-    </MotionBox>
+    </MotionNavLink>
   );
 };
 
