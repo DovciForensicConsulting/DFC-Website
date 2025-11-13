@@ -44,7 +44,10 @@ export const ServicesData = {
       Title: "Bloodstain Pattern Analysis",
       Description: "Examination of blood stain photographic documentation, identification of common blood stain types from scene photographs, reconstruction of area of origin from scale impact spatter photographs, pattern sequencing and source movements",
       Images: [
-        "https://ik.imagekit.io/jddev541/DFC_Images/DSCF3566.jpg?updatedAt=1763051090829"
+        "https://ik.imagekit.io/jddev541/DFC_Images/DSCF3566.jpg?updatedAt=1763051090829",
+        "https://ik.imagekit.io/jddev541/DFC_Images/Calculation%20of%20Impacr%20Angle.jpg",
+        "https://ik.imagekit.io/jddev541/DFC_Images/20251113_155010.jpg",
+        "https://ik.imagekit.io/jddev541/DFC_Images/20251113_155203.jpg"
       ]
       // Picture of Blood Pattern
     },
@@ -78,6 +81,15 @@ export const ServicesData = {
         "https://ik.imagekit.io/jddev541/DFC_Images/mkUq-56H.jpg",
         "https://ik.imagekit.io/jddev541/DFC_Images/LlN2EXYf.jpg",
         "https://ik.imagekit.io/jddev541/DFC_Images/i1TUu8uQ.jpg"
+      ]
+      //Use you picture from Pendleton smoke shop
+    },
+    {
+      Title: "3D scan visualization",
+      Description: "Advanced police agencies are using laser scanning systems to document crime scenes. However, the data collected is in digital form and needs to be converted to a 3 dimensional model. We convert the data to usable 3d diagrams.",
+      Images: [
+        "https://images.ctfassets.net/go54bjdzbrgi/6JNAyLiZlik3VuhLwdzW7E/2e3e8e424f54d5f234e34f14faa9b866/HEA_BLOG_GEO_pix4dmapper-forensic-reconstruction.jpg",
+        "https://images.ctfassets.net/go54bjdzbrgi/5BbiLBguPdHyNYveesLXI0/ab559823ceca36616ad78ecda6daa8a5/IMA_BLOG_Collision_reconstruction_merge_1.jpg"
       ]
       //Use you picture from Pendleton smoke shop
     },
