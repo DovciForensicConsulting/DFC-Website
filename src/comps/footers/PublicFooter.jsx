@@ -22,6 +22,7 @@ import {
 } from "react-icons/fi";
 import { ROOT, SERVICES, CONTACT } from "../../lib/Routes";
 import { ContactData } from "../../data/ContactData";
+import { IoDocumentText } from "react-icons/io5";
 
 
 
@@ -60,11 +61,6 @@ export default function Footer() {
               examination, 3D crime scene reconstruction, and courtroom
               visualization.
             </Text>
-
-            <HStack spacing={3} color="navbar_navlink">
-              <Icon as={FiShield} />
-              <Text fontFamily={'mono'} fontWeight="medium">ISO 17025 Accredited Methods</Text>
-            </HStack>
           </VStack>
 
           {/* Quick Links */}
@@ -116,8 +112,8 @@ export default function Footer() {
               <Text>Court-Qualified Expert Witness</Text>
             </HStack>
             <HStack>
-              <Icon as={FiShield} color="navbar_navlink" />
-              <Text>Peer-Reviewed Publications</Text>
+              <Icon as={IoDocumentText} color="navbar_navlink" />
+              <Text>Curriculum Vitae Available Upon Request</Text>
             </HStack>
           </VStack>
         </SimpleGrid>
