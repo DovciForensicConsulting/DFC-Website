@@ -22,11 +22,19 @@ const Contact = () => {
             Contact Us
           </Heading>
           <ContactForm/>
+          <Text
+            fontFamily={'mono'}
+            color={'deep_gray'}
+            fontSize={'md'}
+          >
+            Or
+          </Text>
           <VStack
             align={'start'}
             bg={'deep_gray'}
-            p={"5px 50px 5px 50px"}
+            p={["5px 20px 5px 20px", "5px 30px 5px 30px" ,"5px 50px 5px 50px"]}
             borderRadius={'15px'}
+
           >
             <Box
               h='25px'
@@ -44,7 +52,7 @@ const Contact = () => {
               >
                 <Text
                   fontFamily={'mono'}
-                  fontSize={'lg'}
+                  fontSize={['md', 'md', 'lg']}
                   color={'golden_wheat'}
                   _hover={{
                     color:'soft_wheat'
@@ -72,7 +80,7 @@ const Contact = () => {
               >
                 <Text
                   fontFamily={'mono'}
-                  fontSize={'lg'}
+                  fontSize={['md', 'md', 'lg']}
                   color={'golden_wheat'}
                   _hover={{
                     color:'soft_wheat'
