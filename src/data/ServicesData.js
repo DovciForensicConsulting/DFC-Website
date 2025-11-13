@@ -49,7 +49,7 @@ export const ServicesData = {
       // Picture of Blood Pattern
     },
     {
-      Title: "Footware/Tire Impression Comparisons",
+      Title: "Impression Comparisons",
       Description: "Comparison of known shoes or tires to impressions collected at crime scenes",
       Images: [
         "https://ik.imagekit.io/jddev541/DFC_Images/FH010005.jpg",

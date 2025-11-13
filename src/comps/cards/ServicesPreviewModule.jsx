@@ -70,7 +70,7 @@ const ServiceCard = ({ title, imageSrc, isActive, direction }) => {
               color={'soft_wheat'}
               fontWeight={'normal'}
               textAlign={'center'}
-              fontSize={'2xl'}
+              fontSize={['xl', '2xl']}
               style={{
                   filter: 'drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))',
               }}
