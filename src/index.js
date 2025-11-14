@@ -13,10 +13,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ChakraProvider value={system}>
-      <RouterProvider router={router}>
+      <RouterProvider router={router}>        
+        <App />
         <SpeedInsights/>
         <Analytics/>
-        <App />
       </RouterProvider>
     </ChakraProvider>
   </React.StrictMode>
